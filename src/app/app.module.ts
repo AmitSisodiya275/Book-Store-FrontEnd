@@ -3,10 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    LoginComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
