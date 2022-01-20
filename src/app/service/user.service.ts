@@ -5,11 +5,13 @@ import { environment } from 'src/environments/environment';
 import { FortgotPassword } from '../model/forgot-password';
 import { ResetPassword } from '../model/reset-password';
 import { User } from '../model/user';
+import { UserLogin } from '../model/userlogin';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
 
   baseUrl:string = environment.apiUrl;
 
@@ -19,6 +21,10 @@ export class UserService {
     return this.http.post<User>(`${this.baseUrl}/registration`, user);
   }
 
+  loginUser(model: UserLogin){
+    return this.http.post(`${this.baseUrl}/login`, model);
+  }
+
   forgotPassword(forgotPassword:FortgotPassword){
     return this.http.post(`${this.baseUrl}/forgot-password`, forgotPassword);
   }
@@ -26,4 +32,6 @@ export class UserService {
   resetUserPassword(token:string, resetpassword:ResetPassword):Observable<Object>{
     return this.http.post(`${this.baseUrl}/resetpassword/${token}`, resetpassword);
   }
+
+ 
 }
