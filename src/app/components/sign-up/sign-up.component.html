@@ -6,23 +6,23 @@
             <div class="image-text">Online Book Shopping</div>         
         </div>
         <div class="form-content">
-            <form class="form">
+            <form class="form" #userForm="ngForm" (ngSubmit)="registerUser()">
                 <div class="form-head row-content">
                     <div class="login-text">Login</div>
                     <div class="sign-text">Signup</div>
                 </div>
                 <div>
                     <label class="label-text row-content" for="fullname" >Full Name</label>
-                    <input class="input row-content" type="text" id="fullname" name="fullname">
+                    <input class="input row-content" type="text" id="fullname" name="fullName" [(ngModel)]="model.fullName">
 
                     <label class="label-text row-content" for="email" >Email Id</label>
-                    <input class="input row-content" type="text" id="email" name="email">
+                    <input class="input row-content" type="text" id="email" name="email" [(ngModel)]="model.emailId">
 
                     <label class="pass-label-text row-content" for="password" >Password</label>
-                    <input class="input row-content" type="text" id="password" name="password">
+                    <input class="input row-content" type="text" id="password" name="password" [(ngModel)]="model.password">
 
                     <label class="label-text row-content" for="mobile" >Mobile Number</label>
-                    <input class="input row-content" type="text" id="mobile" name="mobile">
+                    <input class="input row-content" type="text" id="mobile" name="mobile" [(ngModel)]="model.mobileNo">
                 </div>
                 <div class="row-content">
                     <button type="submit" class="submitButton sign-button-text" id="submitButton" >Signup</button>
