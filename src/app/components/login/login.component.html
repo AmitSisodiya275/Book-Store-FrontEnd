@@ -6,16 +6,16 @@
             <div class="image-text">Online Book Shopping</div>         
         </div>
         <div class="form-content">
-            <form class="form">
+            <form class="form" #loginForm="ngForm" (ngSubmit)="loginUser()">
                 <div class="form-head row-content">
                     <div class="login-text">Login</div>
                     <div class="sign-text">Signup</div>
                 </div>
                 <div>
                     <label class="label-text row-content" for="email" >Email Id</label>
-                    <input class="input row-content" type="text" id="email" name="email">
+                    <input class="input row-content" type="text" id="email" name="email" [(ngModel)]="model.email">
                     <label class="pass-label-text row-content" for="password" >Password</label>
-                    <input class="input row-content" type="text" id="password" name="password">
+                    <input class="input row-content" type="text" id="password" name="password" [(ngModel)]="model.password">
                     <div class="label-password row-content" for="password" >Forgot Password?</div>
                 </div>
                 <div class="row-content">

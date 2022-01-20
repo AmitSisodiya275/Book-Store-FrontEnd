@@ -1,18 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { UserLogin } from 'src/app/model/userlogin';
+import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  emailId:any;
-  password:any;
+  model:UserLogin = new UserLogin();
 
-  constructor(router:Router) { }
+  constructor(private service:UserService) { }
 
   ngOnInit(): void {
 
+  }
+  loginUser() {
+    this.service.loginUser(this.model).subscribe(
+      data=>{this.model=data},
+      error=>(console.log(error))
+    );
   }
 
 }
