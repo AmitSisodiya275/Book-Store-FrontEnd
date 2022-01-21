@@ -72,18 +72,21 @@
     height: 33px;
     padding-right: 82px;
     text-align: left;
-    font: normal normal medium 25px/33px Roboto;
+    font-family: 'Roboto', sans-serif;
+    //font: normal normal medium 25px/33px Roboto;
     letter-spacing: 0px;
     color: #878787;
     text-transform: uppercase;
     margin-left: 0px;
     opacity: 1;
+    cursor: pointer;
 }
 .sign-text {
     width: 89px;
     height: 33px;
     text-align: left;
-    font: normal normal medium 25px/33px Roboto;
+    font-family: 'Roboto', sans-serif;
+   // font: normal normal medium 25px/33px Roboto;
     letter-spacing: 0px;
     color: #0A0102;
     text-transform: uppercase;
@@ -112,7 +115,7 @@
     width: 252px;
     height: 35px;
     margin-left: 69px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #878787;
     border-radius: 2px;
@@ -134,4 +137,17 @@
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+    margin-bottom: 0;
+}
+
+.span-signup{
+    border-bottom: 4px solid #A03037;
+}
+
+.error{
+    color: red;
 }

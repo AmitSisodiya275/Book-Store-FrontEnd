@@ -1,3 +1,6 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 <title>User Login</title>
  <div class="background-box">
     <div class="image-form-box">
@@ -8,24 +11,26 @@
         <div class="form-content">
             <form class="form" #userForm="ngForm" (ngSubmit)="registerUser()">
                 <div class="form-head row-content">
-                    <div class="login-text"><a routerLink="/login">Login</a> </div>
-                    <div class="sign-text">Signup</div>
+                    <div class="login-text" routerLink="/login">Login</div>
+                    <div class="sign-text"><span class="span-signup">Signup</span> </div>
                 </div>
                 <div>
                     <label class="label-text row-content" for="fullname" >Full Name</label>
-                    <input class="input row-content" type="text" id="fullname" name="fullName" [(ngModel)]="model.fullName">
+                    <input class="input row-content" type="text" id="fullname" pattern="[A-Z][A-Za-z ]{3,}$" required name="fullName" #fullName="ngModel" [(ngModel)]="model.fullName"> <span *ngIf="!fullName.valid && fullName.touched" class="label-text error">Full Name is not Valid!!</span>
 
                     <label class="label-text row-content" for="email" >Email Id</label>
-                    <input class="input row-content" type="text" id="email" name="email" [(ngModel)]="model.emailId">
+                    <input class="input row-content" type="email" id="email" name="email" required email [(ngModel)]="model.emailId" #email="ngModel"> <span *ngIf="!email.valid && email.touched" class="label-text error">Email is not Valid!!</span>
 
                     <label class="pass-label-text row-content" for="password" >Password</label>
-                    <input class="input row-content" type="text" id="password" name="password" [(ngModel)]="model.password">
+                    <input class="input row-content" type="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" name="password" required [(ngModel)]="model.password" #password="ngModel">
+                    <span *ngIf="!password.valid && password.touched" class="label-text error">Password should be in Proper Format!!</span>
 
                     <label class="label-text row-content" for="mobile" >Mobile Number</label>
-                    <input class="input row-content" type="text" id="mobile" name="mobile" [(ngModel)]="model.mobileNo">
+                    <input class="input row-content" type="number" id="mobile" name="mobile" pattern="[0-9]{10}$" required [(ngModel)]="model.mobileNo" #mobile="ngModel">
+                    <span *ngIf="!mobile.valid && mobile.touched" class="label-text error">Mobile Number must be 10 digit</span>
                 </div>
                 <div class="row-content">
-                    <button type="submit" class="submitButton sign-button-text" id="submitButton" >Signup</button>
+                    <button type="submit" [disabled]="!userForm.valid" class="submitButton sign-button-text" id="submitButton" >Signup</button>
                 </div>
             </form>
         </div>

@@ -1,3 +1,6 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 <title>User Login</title>
  <div class="background-box">
     <div class="image-form-box">
@@ -8,18 +11,18 @@
         <div class="form-content">
             <form class="form" #loginForm="ngForm" (ngSubmit)="loginUser()">
                 <div class="form-head row-content">
-                    <div class="login-text">Login</div>
-                    <div class="sign-text"><a routerLink="/sign-up">Signup</a> </div>
+                    <div class="login-text"><span class="span-login"> Login</span> </div>
+                    <div class="sign-text" routerLink="/sign-up">Signup</div>
                 </div>
                 <div>
                     <label class="label-text row-content" for="email" >Email Id</label>
-                    <input class="input row-content" type="text" id="email" name="email" [(ngModel)]="model.email">
+                    <input class="input row-content" type="email" id="email" name="email" required email [(ngModel)]="model.email" >
                     <label class="pass-label-text row-content" for="password" >Password</label>
-                    <input class="input row-content" type="text" id="password" name="password" [(ngModel)]="model.password">
+                    <input class="input row-content" type="password" id="password" name="password" [(ngModel)]="model.password">
                     <div class="label-password row-content" for="password"  routerLink="/forgot">Forgot Password?</div>
                 </div>
                 <div class="row-content">
-                    <button type="submit" class="submitButton login-button-text" id="submitButton" >Login</button>
+                    <button type="submit" [disabled]="!loginForm.valid" class="submitButton login-button-text" id="submitButton" >Login</button>
                 </div>
                 <div class="row-content">
                     <label class="or-label" for="or" >Or</label>
