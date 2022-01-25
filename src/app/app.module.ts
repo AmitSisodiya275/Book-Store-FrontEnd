@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { HeaderWithSearchComponent } from './components/header-with-search/header-with-search.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,13 +26,15 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
     ForgotPasswordComponent,
     ResetPasswordComponent,
     HeaderWithSearchComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
     FlexLayoutModule
   ],
   providers: [],

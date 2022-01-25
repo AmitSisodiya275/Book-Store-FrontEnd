@@ -7,7 +7,7 @@
         <div fXLayout="row" fxFlex="40" class="book-image">
             <div fxLayout="column" fxFlexOffset="25" fxFlex="35" class="small-image">
                 <div class="front-image img">
-                    <img src="assets/book-info/Image1.png" alt="">
+                    <img src={{model.bookImages}} alt="">
                 </div>
                 <div class="back-image img">
                     <img src="assets/book-info/Image46.png" alt="">
@@ -15,7 +15,7 @@
             </div>
             <div class="big-image" fxLayout="column">
                 <div>
-                    <img class="big-img" src="assets/book-info/Image11.png" alt="">
+                    <img class="big-img" src={{model.bookImages}} alt="">
                 </div>
                 <div class="cart-wishlist-button" fxLayout="row" fxLayoutAlign="space-between center">
                     <button fxFlex="45" class="cart-btn">ADD TO BAG</button>
@@ -26,17 +26,17 @@
         </div>
         <div fxLayout="column" class="about-book" fxFlexOffset="4" fxFlex="50">
             <div class="book-name">
-                Don't Make Me Think
+               {{model.bookName}}
             </div>
             <div class="author-name">
-                by Steve Krug
+               {{model.bookAuthor}}
             </div>
             <div class="rating-review" fxLayout="row" fxLayoutGap="5px">
-                <div class="rating">4.5 *</div>
+                <div class="rating"> {{model.bookRating}} *</div>
                 <div class="review">(20)</div>
             </div>
             <div class="price-div" fxLayout="row" fxLayoutAlign="start center">
-                <div class="offer-price">Rs. 1500</div>
+                <div class="offer-price">Rs. {{ model.bookPrice}} </div>
                 <div class="actual-price">Rs. 2000</div>
             </div>
             <div>
@@ -44,9 +44,7 @@
             </div>
             <div class="book-detail" fxLayout="column">
                 <div class="book-detail-text">Book Detail</div>
-                <div class="book-detail-para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sint maxime
-                    illo suscipit harum neque et vitae nihil consectetur magnam, eius nostrum impedit! Doloribus ut
-                    beatae sint necessitatibus facilis, eius deserunt earum.</div>
+                <div class="book-detail-para"> {{ model.bookDescription}} </div>
             </div>
             <div>
                 <hr class="line">
@@ -73,7 +71,7 @@
                     <div class="person-name">Aniket Chile</div>
                     <div class="person-rating">* * * * *</div>
                     <div class="comment-text">Good product. Even though the translation could have been better,
-                        Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his
+                        Chanakyas neeti are thought provoking. Chanakya has written on many different topics and his
                         writings are succinct.</div>
                 </div>
             </div>
