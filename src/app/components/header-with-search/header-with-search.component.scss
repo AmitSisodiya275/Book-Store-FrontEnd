@@ -1,0 +1,48 @@
+.header{
+    background: #A03037 0% 0% no-repeat padding-box;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5% 0;
+}
+.spacer{
+    width: 10%;
+}
+.spacer-between{
+    width: 3%;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.logo-text {
+    text-align: left;
+    font: normal normal normal 20px/26px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    opacity: 1;
+}
+.search-div{
+    width: 45%;
+}
+.search-box{
+    width: 70%;
+}
+.profile{
+    color: white;
+}
+.cart-text{
+    text-align: left;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0.45px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+.profile-svg{
+    width: 18px;
+    height: 18px;
+    color: #FFFFFF;
+}
