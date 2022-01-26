@@ -24,5 +24,8 @@ export class DashboardComponent implements OnInit {
     });
    
   }
+  onClickBook(id:number) {
+    this.router.navigate([`book/${id}`]);
+  }
 
 }

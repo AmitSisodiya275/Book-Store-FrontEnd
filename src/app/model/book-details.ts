@@ -1,11 +1,11 @@
-export interface BookDetails {
-    availableBookQuantity: number
-bookAuthor: string
-bookDescription: string
-bookId: number
-bookImages: string
-bookName: string
-bookPrice: any
-bookRating: any
+export class BookDetails {
+    availableBookQuantity: number | undefined;
+    bookAuthor: string | undefined;
+    bookDescription: string | undefined;
+    bookId!: number;
+    bookImages: string | undefined;
+    bookName: string | undefined;
+    bookPrice: any | undefined;
+    bookRating: any | undefined;
 
 }

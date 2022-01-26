@@ -1,6 +1,7 @@
 .main-content {
-    width: 1366px;
-    height: 1216px;
+    width: 100%;
+    height:90%;
+    // height: 1216px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
 }
@@ -9,35 +10,35 @@
      flex-direction: row;
      justify-content: left;
      align-items: center;
-     padding-right: 177px;
-     padding-left: 172px;
-     padding-top: 23px;
+     padding-right: 13%;
+     padding-left: 14%;
+     padding-top: 2%;
 }
 .book-text {
-    width: 70px;
-    height: 33px;
+    // width: 70px;
+    // height: 33px;
     text-align: left;
-    padding-top: 22px;
+    padding-top: 2%;
     font: normal normal normal 25px/33px Roboto;
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
 }
 .items {
-    width: 62px;
-    height: 16px;
+    // width: 62px;
+    // height: 16px;
     text-align: left;
-    padding-left: 5px;
-    padding-top: 33px;
-    padding-right: 717px;
+    padding-left: 0.5%;
+    padding-top: 3%;
+    padding-right: 72%;
     font: normal normal normal 12px/16px Roboto;
     letter-spacing: 0px;
     color: #9D9D9D;
     opacity: 1;
 }
 .selectBox {
-    width: 161px;
-    height: 30px;
+    width: 17%;
+    height: 30%;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #E2E2E2;
     border-radius: 1px;
@@ -48,23 +49,24 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding-top: 37px;
-    padding-left: 172px;
+    padding-top: 2%;
+    padding-left: 14%;
 }
 .row-content {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    padding-left: 20px;
-    padding-bottom: 5px;
+    padding-left: 2%;
+    padding-bottom: 2%;
 }
 .book {
-    width: 235px;
-    height: 275px;
+    width: 20%;
+    height: 25%;
     background-color: #FFFFFF;
     border: 1px solid #E2E2E2;
     border-radius: 3px;
     margin-right: 20px;
+    margin-bottom: 2%;
     color: #FFFFFF;
 }
 .image-content {
@@ -102,7 +104,7 @@
     opacity: 1;
 }
 .rating {
-    text-align: left;
+    text-align: center;
     font: normal normal bold 10px/13px Roboto;
     letter-spacing: 0px;
     color: #FFFFFF;
@@ -111,6 +113,7 @@
     background: #388E3C 0% 0% no-repeat padding-box;
     border-radius: 1px;
     opacity: 1;
+    // padding-left: 3%;
 }
 .rating-number {
     width: 18px;
@@ -142,3 +145,8 @@
     color: #878787;
     opacity: 1;
 }
+.star {
+    width: 30%;
+    height: 30%;
+}
+
