@@ -5,14 +5,14 @@
 <div class="main-content">
     <div class="main-header">
         <label class="book-text">Books </label>
-        <label class="items">128(Items)</label>
+        <label class="items">( {{totalBooks}}Items )</label>
         <select class="selectBox">
             <option>Sort By Relevance</option>
         </select>
     </div>
 
         <div class="main">
-            <div class="book" *ngFor="let item of bookList" >
+            <div class="book" *ngFor="let item of bookList">
                 <div class="image-content">
                     <button class="book-button">
                         <img class="image" src= {{item.bookImages}} >
@@ -21,7 +21,7 @@
                 <div class="book-name row-content"> {{item.bookName}} </div>
                 <div class="author-name row-content">{{item.bookAuthor}}</div>
                 <div class="row-content">
-                    <span class="rating">{{item.bookRating}}* </span>
+                    <span class="rating">{{item.bookRating}} * </span>
                      <div class="rating-number">(20)</div>
                 </div>
                 <div class="row-content">

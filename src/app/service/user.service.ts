@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { FortgotPassword } from '../model/forgot-password';
 import { ResetPassword } from '../model/reset-password';
+import { Token } from '../model/token';
 import { User } from '../model/user';
 import { UserLogin } from '../model/userlogin';
 
@@ -21,8 +22,8 @@ export class UserService {
     return this.http.post<User>(`${this.baseUrl}/registration`, user);
   }
 
-  loginUser(model: UserLogin){
-    return this.http.post(`${this.baseUrl}/login`, model);
+  loginUser(model: UserLogin):Observable<Token>{
+    return this.http.post<Token>(`${this.baseUrl}/login`, model);
   }
 
   forgotPassword(forgotPassword:FortgotPassword){
