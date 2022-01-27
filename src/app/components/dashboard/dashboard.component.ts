@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   bookList:BookDetails[]=[];
-
+  totalBooks:number | undefined;
   constructor(private bookService: BookService,private router: Router) { }
 
   ngOnInit(): void {
@@ -21,8 +21,8 @@ export class DashboardComponent implements OnInit {
       console.log(bookdata);
       this.bookList=bookdata;
       console.log(this.bookList);
+      this.totalBooks= bookdata.length;
     });
-   
   }
   onClickBook(id:number) {
     this.router.navigate([`book/${id}`]);

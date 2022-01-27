@@ -16,8 +16,14 @@
         <span class="spacer"></span>
     </div>
     <div class="profile">
-        <img class="profile-svg" src="assets/book-info/profile1.svg" alt="">
-        <div class="cart-text">Profile</div>
+        <img class="profile-svg" src="assets/book-info/profile1.svg" alt="" [mat-menu-trigger-for]="profileMenu">
+        <div class="cart-text" > {{personName || 'Profile'}} </div>
+        <mat-menu #profileMenu="matMenu">
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item>My Orders</button>
+            <button mat-menu-item>My Wishlist</button>
+            <button class="logout" mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
     </div>
     <div class="spacer-between">
         <span class="spacer-between"></span>
