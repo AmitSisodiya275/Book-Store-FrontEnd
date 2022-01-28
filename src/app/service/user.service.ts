@@ -34,5 +34,9 @@ export class UserService {
     return this.http.post(`${this.baseUrl}/resetpassword/${token}`, resetpassword);
   }
 
+  isLoggedIn() {
+    return !!localStorage.getItem('token');
+  }
+
  
 }

@@ -1,6 +1,6 @@
 .main-content {
-    width: 1366px;
-    height: 1216px;
+    width: 1345px;
+    height:1216px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
 }
@@ -29,7 +29,7 @@
     text-align: left;
     padding-left: 5px;
     padding-top: 33px;
-    padding-right: 717px;
+    padding-right: 700px;
     font: normal normal normal 12px/16px Roboto;
     letter-spacing: 0px;
     color: #9D9D9D;
@@ -103,16 +103,23 @@
     opacity: 1;
 }
 .rating {
-    text-align: center;
-    font: normal normal bold 10px/13px Roboto;
-    letter-spacing: 0px;
-    color: #FFFFFF;
+    text-align: left;
+    
     width: 33px;
     height: 16px;
     background: #388E3C 0% 0% no-repeat padding-box;
     border-radius: 1px;
     opacity: 1;
-    // padding-left: 3%;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+.rating-text {
+    text-align: center;
+    font: normal normal bold 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    padding-top: 10px;
+    // padding-bottom: 5px;
 }
 .rating-number {
     width: 18px;
@@ -143,4 +150,10 @@
     letter-spacing: 0px;
     color: #878787;
     opacity: 1;
+}
+.star {
+    padding-left: 5px;
+    padding-top: 10px;
+    font: normal normal bold 18px/20px Roboto;
+
 }

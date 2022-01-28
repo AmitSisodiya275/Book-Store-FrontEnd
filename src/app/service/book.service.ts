@@ -20,4 +20,8 @@ export class BookService {
     return this.http.get<BookDetails>(`${this.apiUrl}/getbook/${id}`);
   }
 
+  isLoggedIn() {
+    return !!localStorage.getItem('token');
+  }
+
 }

@@ -2,17 +2,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 <app-header-with-search></app-header-with-search>
+
 <div class="main-content">
+
     <div class="main-header">
         <label class="book-text">Books </label>
-        <label class="items">( {{totalBooks}}Items )</label>
+        <label class="items">( {{totalBooks}} Items )</label>
         <select class="selectBox">
             <option>Sort By Relevance</option>
+            <option>Price:Low to High</option>
+            <option>Price:High to Low</option>
+            <option>Newest Arrivals</option>
         </select>
     </div>
 
-        <div class="main">
-            <div class="book" *ngFor="let item of bookList">
+    <div class="main">
+        <div class="book" *ngFor="let item of bookList" (click)="onClickBook(item.bookId)" >
                 <div class="image-content">
                     <button class="book-button">
                         <img class="image" src= {{item.bookImages}} >
@@ -21,8 +26,10 @@
                 <div class="book-name row-content"> {{item.bookName}} </div>
                 <div class="author-name row-content">{{item.bookAuthor}}</div>
                 <div class="row-content">
-                    <span class="rating">{{item.bookRating}} * </span>
-                     <div class="rating-number">(20)</div>
+                    <div class="rating">
+                        <span class="rating-text">4.5<span class="star">*</span></span>
+                    </div>
+                    <div class="rating-number">(20)</div>
                 </div>
                 <div class="row-content">
                     <div class="price">Rs. {{item.bookPrice}}</div>
@@ -32,41 +39,3 @@
 
         </div>
 </div>
-        <!-- </div>
-
-    <div class="main>
-     
-        <div class=" book" *ngFor="let item of bookList">
-        <div class="image-content">
-            <button class="book-button">
-                <img class="image" src="assets/images/dontMakeMeThink.png">
-            </button>
-        </div>
-        <div class="book-name row-content">{{item.bookName}}</div>
-        <div class="author-name row-content">{{item.bookAuthor}}</div>
-        <div class="row-content">
-            <span class="rating">{{item.bookRating}}
-        </div>
-        <div class="rating-number">(20)</div>
-    </div>
-    <div class="row-content">
-        <div class="price">Rs. {{item.bookPrice}}</div>
-        <div class="original-price">Rs.2000</div>
-    </div>
-</div>
-</div> -->
-    <!-- </div> -->
-
-
-
-    <!--    <div class="book">
-            <div class="image-content">
-                <button class="book-button">
-                <img class="image" src="assets/images/masteringSharepointFramework.png"> 
-                </button>
-            </div>
-            <div class="book-name row-content">Don't Make Me Think</div>
-            <div class="author-name row-content">by Steve Krug</div>
-            <div class="row-content"><div class="rating">4.5</div><div class="rating-number">(20)</div></div>
-            <div class="row-content"><div class="price">Rs. 1500</div><div class="original-price">Rs.2000</div></div>
-        </div> -->

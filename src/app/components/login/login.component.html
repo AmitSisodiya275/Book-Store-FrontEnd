@@ -21,6 +21,7 @@
                     <input class="input row-content" type="password" id="password" name="password" [(ngModel)]="model.password">
                     <div class="label-password row-content" for="password"  routerLink="/forgot">Forgot Password?</div>
                 </div>
+                <span *ngIf="!isUserLoggedIn()" class="label-text error">Email id or password is wrong</span>
                 <div class="row-content">
                     <button type="submit" [disabled]="!loginForm.valid" class="submitButton login-button-text" id="submitButton" >Login</button>
                 </div>
