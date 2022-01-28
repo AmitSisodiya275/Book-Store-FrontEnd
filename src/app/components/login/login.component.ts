@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   model:UserLogin = new UserLogin();
   fetchedToken:Token = new Token();
+  islogIn:boolean=true;
 
   constructor(private service:UserService , private router:Router) { }
 
@@ -20,12 +21,24 @@ export class LoginComponent implements OnInit {
   }
   loginUser() {
     this.service.loginUser(this.model).subscribe(
-      data=>{ console.log(data) , this.fetchedToken = data,  localStorage.setItem( "token", this.fetchedToken.token), localStorage.setItem("name", this.fetchedToken.personName)},
-      error=>{ console.log(error)}
+      data=>{ console.log(data) , this.fetchedToken = data,  localStorage.setItem( "token", this.fetchedToken.token), localStorage.setItem("name", this.fetchedToken.personName),this.router.navigate(['dashboard'])},
+      error=>{ console.log(error),this.isUserLogIn()}
     );
-
-    this.router.navigate(['dashboard']);
+    
+    
     
   }
+  isUserLogIn() {
+
+    this.islogIn=false;
+
+  }
+  isUserLoggedIn() {
+    if(this.islogIn) {
+      return true;
+    }
+    return false;
+  }
+
 
 }
