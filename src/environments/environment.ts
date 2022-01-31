@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl:'http://localhost:8081/bookstore',
-  bookApiUrl:'http://localhost:8081/books'
+  apiUrl:'http://localhost:8080/bookstore',
+  bookApiUrl:'http://localhost:8080/books',
+  cartApiUrl:'http://localhost:8080/cart'
 };
 
 /*

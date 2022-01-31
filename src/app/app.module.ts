@@ -18,6 +18,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MyCartComponent } from './components/my-cart/my-cart.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     HeaderWithSearchComponent,
     BookDetailsComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    MyCartComponent
   ],
   imports: [
     BrowserModule,

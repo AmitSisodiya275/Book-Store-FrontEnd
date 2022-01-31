@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MyCartComponent } from './components/my-cart/my-cart.component';
 const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'sign-up', component: SignUpComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'forgot', component: ForgotPasswordComponent},
   { path: 'dashboard',component: DashboardComponent, canActivate: [AuthGuard]},
   { path: 'book/:id', component: BookDetailsComponent},
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'my-cart', component:MyCartComponent}
 ];
 
 @NgModule({

@@ -18,7 +18,7 @@
                     <img class="big-img" src={{model.bookImages}} alt="">
                 </div>
                 <div class="cart-wishlist-button" fxLayout="row" fxLayoutAlign="space-between center">
-                    <button fxFlex="45" class="cart-btn">ADD TO BAG</button>
+                    <button fxFlex="45" class="cart-btn" (click)="addBookToCart()" >ADD TO BAG</button>
                     <button fxFlex="45" class="wishlist-btn"> <img class="heart-icon" src="assets/book-info/heart.svg"
                             alt=""> WISHLIST</button>
                 </div>
