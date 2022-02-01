@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { HeaderWithSearchComponent } from './components/header-with-search/header-with-search.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -41,7 +43,9 @@ import { MyCartComponent } from './components/my-cart/my-cart.component';
     FormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatMenuModule
+    MatMenuModule,
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

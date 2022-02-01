@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { concatAll } from 'rxjs';
+import { BookDetails } from 'src/app/model/book-details';
 import { Cart } from 'src/app/model/cart';
 import { CartService } from 'src/app/service/cart.service';
 
@@ -12,17 +12,31 @@ export class MyCartComponent implements OnInit {
 
   token:any=localStorage.getItem('token');
   cartModel:Cart=new Cart();
+
+  books:BookDetails[]= [];
+  cartValue:number | undefined;
+
   constructor(private cartService: CartService) { }
 
  
   ngOnInit(): void {
+    this.getProductOfCart();
   }
 
-  addOneQuantity(){
-    this.cartModel.inCartQuantity=1;
-    this.cartService.addToCart(this.token, 1, this.cartModel).subscribe(
-      Incomingdata=>{console.log(Incomingdata)},
-      error=>{console.log(error)}
-    )
+  getProductOfCart(){
+    this.cartService.getProductOfCart(this.token).subscribe(
+      data=>{ console.log(data), this.books= data.books, this.cartValue= data.cartQuantity},
+      error=> { console.log(error)}
+    );
   }
+
+
+  addOneQuantity(id:number){
+    this.cartModel.inCartQuantity=1;
+    this.cartService.addToCart(this.token, id, this.cartModel).subscribe(
+      Incomingdata=>{console.log(Incomingdata), this.getProductOfCart()},
+      error=>{console.log(error)}
+    );
+  }
+
 }

@@ -47,12 +47,17 @@
 .book-image{
     margin-right: 10%;
 }
+.bk-image{
+    width: 65px;
+height: 85px;
+}
 .book-name{
     text-align: left;
     font: normal normal normal 14px/17px Lato;
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
+    margin-bottom: 5%;
 }
 .author{
     text-align: left;
@@ -60,7 +65,8 @@
     letter-spacing: 0px;
     color: #9D9D9D;
     opacity: 1;
-    margin: 5% 0;
+    // margin: 5% 0%;
+    margin-bottom: 5%;
 }
 .price{
     text-align: left;
@@ -76,8 +82,38 @@
     letter-spacing: 0px;
     color: #9D9D9D;
     opacity: 1;
-    align-items: center;
+    align-items: flex-end;
+    margin-left: 8%;
 }
 .minus-button{
     border-radius: 50%;
+}
+.btn{
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    opacity: 1;
+    margin-right: 1%;
+}
+.plus{
+    margin-right: 4%;
+}
+.remove-button{
+    border: none;
+    background-color: white;
+    text-align: left;
+    font: normal normal normal 12px/15px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+.place-order{
+    text-align: left;
+    font: normal normal medium 14px/17px Lato;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    padding: 1% 5%;
 }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cart } from '../model/cart';
+import { CartResponse } from '../model/cart-response';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,9 @@ export class CartService {
 
   addToCart(token:string, bookId:number, cart:Cart):Observable<Object>{
     return this.http.post<Object>(`${this.baseUrl}/add-to-cart/${token}/${bookId}`, cart);
+  }
+
+  getProductOfCart(token:string):Observable<CartResponse>{
+    return this.http.get<CartResponse>(`${this.baseUrl}/get-cart-product/${token}`);
   }
 }

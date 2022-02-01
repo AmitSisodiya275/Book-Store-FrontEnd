@@ -7,5 +7,5 @@ export class BookDetails {
     bookName: string | undefined;
     bookPrice: any | undefined;
     bookRating: any | undefined;
-
+    inCartQuantity:number | undefined;
 }
