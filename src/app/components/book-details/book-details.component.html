@@ -32,7 +32,7 @@
                {{model.bookAuthor}}
             </div>
             <div class="rating-review" fxLayout="row" fxLayoutGap="5px">
-                <div class="rating"> {{model.bookRating}} *</div>
+                <div class="rating"> {{model.bookRating}} <mat-icon class="rating-star">star</mat-icon> </div>
                 <div class="review">(20)</div>
             </div>
             <div class="price-div" fxLayout="row" fxLayoutAlign="start center">
@@ -54,7 +54,7 @@
             </div>
             <div class="rating-and-form" fxLayout="column">
                 <span class="overall-text">Overall rating</span>
-                <div class="rating-star">* * * * *</div>
+                <div class="rating-star"><mat-icon *ngFor="let _ of [].constructor(5)">star_border</mat-icon></div>
                 <div class="text-box" fxFlex="100">
                     <textarea class="feedback-box" cols="72" rows="4" placeholder="Write your review"></textarea>
                 </div>

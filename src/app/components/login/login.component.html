@@ -2,11 +2,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 <title>User Login</title>
- <div class="background-box">
+<div class="background-box">
     <div class="image-form-box">
         <div>
-            <img class="image" id="1" src="assets/images/loginimg.png"> 
-            <div class="image-text">Online Book Shopping</div>         
+            <img class="image" id="1" src="assets/images/loginimg.png">
+            <div class="image-text">Online Book Shopping</div>
         </div>
         <div class="form-content">
             <form class="form" #loginForm="ngForm" (ngSubmit)="loginUser()">
@@ -15,27 +15,29 @@
                     <div class="sign-text" routerLink="/sign-up">Signup</div>
                 </div>
                 <div>
-                    <label class="label-text row-content" for="email" >Email Id</label>
-                    <input class="input row-content" type="email" id="email" name="email" required email [(ngModel)]="model.email" >
-                    <label class="pass-label-text row-content" for="password" >Password</label>
-                    <input class="input row-content" type="password" id="password" name="password" [(ngModel)]="model.password">
-                    <div class="label-password row-content" for="password"  routerLink="/forgot">Forgot Password?</div>
+                    <label class="label-text row-content" for="email">Email Id</label>
+                    <input class="input row-content" type="email" id="email" name="email" required email
+                        [(ngModel)]="model.email">
+                    <label class="pass-label-text row-content" for="password">Password</label>
+                    <input class="input row-content" type="password" id="password" name="password"
+                        [(ngModel)]="model.password">
+                    <div class="label-password row-content" for="password" routerLink="/forgot">Forgot Password?</div>
                 </div>
                 <span *ngIf="!isUserLoggedIn()" class="label-text error">Email id or password is wrong</span>
                 <div class="row-content">
-                    <button type="submit" [disabled]="!loginForm.valid" class="submitButton login-button-text" id="submitButton" >Login</button>
+                    <button type="submit" [disabled]="!loginForm.valid" class="submitButton login-button-text"
+                        id="submitButton">Login</button>
                 </div>
                 <div class="row-content">
-                    <label class="or-label" for="or" >Or</label>
+                    <label class="or-label" for="or">Or</label>
                 </div>
                 <div class="row-content">
-                    <button type="" class="facebook" id="facebook" >Facebook</button>
-                    <button type="" class="google" id="google" >Google</button>
+                    <button type="" class="facebook" id="facebook">Facebook</button>
+                    <button type="" class="google" id="google">Google</button>
                 </div>
             </form>
         </div>
-        
-    </div>
-    
-</div>
 
+    </div>
+
+</div>
