@@ -1,18 +1,24 @@
 
 <app-header-with-search></app-header-with-search>
 
-<div>
-    <label class="label-text row-content" for="fullname" >Full Name</label>
-    <input class="input row-content" type="text" id="fullname">
+<div class="main">
+    <div class="link">
+        <span>Home/</span><span class="profile">Profile</span>
+    </div>
+    <form>
+        <label class="form-head row-content">Personal Details</label>
+        <label class="label-text row-content" for="fullname" >Full Name</label>
+        <input class="input-box row-content" disabled type="text" id="fullname" value={{model.fullName}}>
 
-    <label class="label-text row-content" for="email" >Email Id</label>
-    <input class="input row-content" type="email" id="email" name="email"> 
+        <label class="label-text row-content" for="email" >Email Id</label>
+        <input class="input-box row-content" disabled type="email" id="email" name="email" value={{model.emailId}}> 
 
-    <label class="pass-label-text row-content" for="password" >Password</label>
-    <input class="input row-content" type="password" id="password" >
-    
+        <label class="label-text row-content" for="password" >Password</label>
+        <input class="input-box row-content" disabled type="password" id="password" >
+        
+        <label class="label-text row-content" for="mobile" >Mobile Number</label>
+        <input class="input-box row-content" disabled type="number" id="mobile" name="mobile" value={{model.mobileNo}}>
 
-    <label class="label-text row-content" for="mobile" >Mobile Number</label>
-    <input class="input row-content" type="number" id="mobile" name="mobile">
+    </form>
     
 </div>
