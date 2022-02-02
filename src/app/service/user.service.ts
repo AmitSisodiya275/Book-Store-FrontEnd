@@ -7,6 +7,7 @@ import { ResetPassword } from '../model/reset-password';
 import { Token } from '../model/token';
 import { User } from '../model/user';
 import { UserLogin } from '../model/userlogin';
+import { UserProfile } from '../model/user-profile';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,8 @@ export class UserService {
     return !!localStorage.getItem('token');
   }
 
+  getUserProfile(token:string|null):Observable<UserProfile> {
+    return this.http.get<UserProfile>(`${this.baseUrl}/getuserprofile/${token}`);
+  }
  
 }

@@ -1,6 +1,53 @@
+.link{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    padding-left: 10%;
+    padding-top: 1.5%;
+    cursor: pointer;
+    opacity: 1;
+}
 .row-content {
     display: flex;
     flex-direction: row;
     justify-content: left;
     align-items: left;
+}
+.form-head {
+    padding-left: 12%;
+    padding-top: 1.5%;
+    font: normal normal normal bold 15px/19px Roboto;
+    color: #0A0102;
+}
+.profile {
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+.label-text {
+    padding-left: 12%;
+    padding-top: 1%;
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: capitalize;
+    opacity: 1;
+}
+.input-box {
+    width: 35%;
+    height: 40%;
+    margin-left: 12%;
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
+    padding-left: 2%;
+    margin-top: 0.5%;
+    text-align: left;
+    font: normal normal normal 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
 }
