@@ -1,0 +1,45 @@
+.container{
+  height: 88%;
+}
+.example-card {
+  max-width: 91%;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid #E4E4E4;
+  height: 18vh;
+
+
+}
+.image{
+    width: 5vw;
+    height: 15vh;
+}
+
+
+
+.footer{
+  width: 100%;
+  height: 4%;
+  text-align: left;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  background: #2E1D1E 0% 0% no-repeat padding-box;
+  margin: 1rem;
+  padding: 3px;
+  text-align: center;
+}
+
+.footer-text{
+  font: normal normal medium 12px/15px Lato;
+
+}
+.titele-icon-width{
+
+    text-align:center;
+
+}
+.containt{
+    max-width: 91%;
+}
