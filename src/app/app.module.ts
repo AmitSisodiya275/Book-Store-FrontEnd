@@ -21,10 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
-import { MyOrderComponent } from './my-order/my-order.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatCardModule} from '@angular/material/card';
-import { MyWishlistComponent } from './my-wishlist/my-wishlist.component';
 
 
 
@@ -41,8 +37,6 @@ import { MyWishlistComponent } from './my-wishlist/my-wishlist.component';
     DashboardComponent,
     ProfileComponent,
     MyCartComponent,
-    MyOrderComponent,
-    MyWishlistComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +47,7 @@ import { MyWishlistComponent } from './my-wishlist/my-wishlist.component';
     FlexLayoutModule,
     MatMenuModule,
     MatIconModule,
-    MatSelectModule,
-    MatToolbarModule,
-    MatCardModule
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
