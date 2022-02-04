@@ -14,7 +14,7 @@ export class MyCartComponent implements OnInit {
   cartModel:Cart=new Cart();
 
   books:BookDetails[]= [];
-  cartValue:number | undefined;
+  cartValue: number | undefined;
 
   constructor(private cartService: CartService) { }
 
@@ -39,4 +39,19 @@ export class MyCartComponent implements OnInit {
     );
   }
 
+  decreaseOneQuantity(id:number){
+    this.cartModel.inCartQuantity = 1;
+    this.cartService.decreaseOneQuantity(this.token, id, this.cartModel).subscribe(
+      data=>{ console.log(data), this.getProductOfCart()},
+      error=>{ console.log(error)}
+    )
+  }
+
+  removeBook(id:number){
+    this.cartService.removeBook(this.token, id).subscribe(
+      data=>{console.log(data), this.getProductOfCart()},
+      error=>{console.log(error)
+      }
+    )
+  }
 }

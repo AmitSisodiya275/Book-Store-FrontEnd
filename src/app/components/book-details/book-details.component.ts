@@ -41,7 +41,7 @@ export class BookDetailsComponent implements OnInit {
   addBookToCart(){
     this.cartModel.inCartQuantity = 1;
     this.cartService.addToCart(this.token, this.id,this.cartModel ).subscribe(
-      data=>{ console.log(data)},
+      data=>{ console.log(data), this.getSingleBook()},
       error=>{console.log(error);
       }
     )

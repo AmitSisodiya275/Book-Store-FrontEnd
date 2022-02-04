@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookService } from 'src/app/service/book.service';
 
@@ -11,6 +11,9 @@ export class HeaderWithSearchComponent implements OnInit {
 
    personName:any;
    public searchTerm:string='';
+   @Input()
+   cartNo:number | undefined;
+
   constructor(private router:Router,private service:BookService) { }
 
   ngOnInit(): void {

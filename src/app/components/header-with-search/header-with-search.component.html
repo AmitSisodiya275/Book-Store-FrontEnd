@@ -3,7 +3,7 @@
         <span class="spacer"></span>
     </div>
     <div class="logo" routerLink="/dashboard">
-        <div class="logo-image"><img src="assets/book-info/education.svg" alt=""></div>
+        <div class="logo-image"><img src="assets/book-info/education.svg"></div>
         <span class="logo-text">Bookstore</span>
     </div>
     <div class="spacer-between">
@@ -16,10 +16,10 @@
         <span class="spacer"></span>
     </div>
     <div class="profile">
-        <img class="profile-svg" src="assets/book-info/profile1.svg" alt="" [mat-menu-trigger-for]="profileMenu">
+        <mat-icon [mat-menu-trigger-for]="profileMenu" >person_outline</mat-icon>
         <div class="cart-text" > {{personName || 'Profile'}} </div>
         <mat-menu #profileMenu="matMenu">
-            <button mat-menu-item routerLink="/profile">Profile</button>
+            <button mat-menu-item routerLink="/profile" >Profile</button>
             <button mat-menu-item>My Orders</button>
             <button mat-menu-item routerLink="/my-wishlist">My Wishlist</button>
             <button class="logout" mat-menu-item (click)="logout()">Logout</button>
@@ -29,7 +29,7 @@
         <span class="spacer-between"></span>
     </div>
     <div class="cart-logo">
-        <img src="assets/book-info/supermarket.svg" routerLink="/my-cart" alt="">
+        <img src="assets/book-info/supermarket.svg" routerLink="/my-cart"><span class="cart-no" *ngIf="!(cartNo ==0)" > <sup>{{cartNo}}</sup>  </span>
         <div class="cart-text">Cart</div>
     </div>
 </div>
