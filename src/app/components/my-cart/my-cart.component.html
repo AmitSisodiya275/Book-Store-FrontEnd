@@ -1,4 +1,4 @@
-<app-header-with-search></app-header-with-search>
+<app-header-with-search [cartNo]="cartValue"></app-header-with-search>
 <div class="whole-page">
     <div class="page-content" fxLayout="column" fxFlexOffset="11" fxFlex="50">
 
@@ -26,29 +26,33 @@
             </div>
 
             <div class="all-books" *ngFor="let book of books">
-                <div class="book-details" fxLayout="row" >
+                <div class="book-details" fxLayout="row">
                     <div>
-                        <img class="bk-image" src="assets/images/dontMakeMeThink.png" alt="">
+                        <img class="bk-image" src= {{book.bookImages}} alt="">
                     </div>
 
                     <div class="book-info" fxLayout="column" fxFlexOffset="7">
                         <div class="book-name"> {{book.bookName}} </div>
                         <div class="author"> {{book.bookAuthor}} </div>
                         <div class="price-tag" fxLayout="row" fxFlexAlign="start center">
-                            <div class="price">Rs. {{book.bookPrice}} </div>
+                            <div class="price">Rs. {{book.bookPrice * book.inCartQuantity}} </div>
                             <div class="actual-price" fxFlexAlign="center">Rs. 2000</div>
                         </div>
+                        <div class="book-quantity author">Available Quantity : {{book.availableBookQuantity - book.inCartQuantity}} </div>
                     </div>
 
                 </div>
                 <div class="quantity-adjustment" fxLayout="row">
-                    <button class="minus-button btn" fxFlexOffset="18">-</button>
+                    <button class="minus-button btn" fxFlexOffset="18"
+                       [disabled]="book.inCartQuantity == 1" (click)="decreaseOneQuantity(book.bookId)">-</button>
                     <button disabled class="btn"> {{book.inCartQuantity}} </button>
-                    <button class="minus-button btn plus" (click)="addOneQuantity(book.bookId)">+</button>
-                    <button class="remove-button">Remove</button>
+                    <button class="minus-button btn plus"
+                        [disabled]="book.inCartQuantity == book.availableBookQuantity "
+                        (click)="addOneQuantity(book.bookId)">+</button>
+                    <button class="remove-button" (click)="removeBook(book.bookId)" >Remove</button>
                 </div>
             </div>
-            
+
             <div class="place-order-btn">
                 <button class="place-order" fxFlexOffset="70">PLACE ORDER</button>
             </div>

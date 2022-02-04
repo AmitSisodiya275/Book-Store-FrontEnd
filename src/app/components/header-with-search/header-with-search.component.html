@@ -29,7 +29,7 @@
         <span class="spacer-between"></span>
     </div>
     <div class="cart-logo">
-        <img src="assets/book-info/supermarket.svg" routerLink="/my-cart">
+        <img src="assets/book-info/supermarket.svg" routerLink="/my-cart"><span class="cart-no" *ngIf="!(cartNo ==0)" > <sup>{{cartNo}}</sup>  </span>
         <div class="cart-text">Cart</div>
     </div>
 </div>

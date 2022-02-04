@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class HeaderWithSearchComponent implements OnInit {
 
    personName:any;
+   @Input()
+   cartNo:number | undefined;
 
   constructor(private router:Router) { }
 

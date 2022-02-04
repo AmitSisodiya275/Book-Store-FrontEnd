@@ -1,7 +1,7 @@
 <app-header-with-search></app-header-with-search>
 <div class="full-page">
     <div class="link">
-        Home/ <span class="book-no">Book(1)</span>
+        Home/ <span class="book-no">Book( {{model.bookId}} )</span>
     </div>
     <div fxLayout="row" class="book-info">
         <div fXLayout="row" fxFlex="40" class="book-image">
@@ -18,7 +18,7 @@
                     <img class="big-img" src={{model.bookImages}} alt="">
                 </div>
                 <div class="cart-wishlist-button" fxLayout="row" fxLayoutAlign="space-between center">
-                    <button fxFlex="45" class="cart-btn" (click)="addBookToCart()" >ADD TO BAG</button>
+                    <button fxFlex="45" class="cart-btn" (click)="addBookToCart()" [disabled]="model.inCartQuantity >= 1" >ADD TO BAG</button>
                     <button fxFlex="45" class="wishlist-btn"> <img class="heart-icon" src="assets/book-info/heart.svg"
                             alt=""> WISHLIST</button>
                 </div>

@@ -21,4 +21,12 @@ export class CartService {
   getProductOfCart(token:string):Observable<CartResponse>{
     return this.http.get<CartResponse>(`${this.baseUrl}/get-cart-product/${token}`);
   }
+
+  decreaseOneQuantity(token:string, bookId:number, cart:Cart):Observable<CartResponse>{
+    return this.http.post<CartResponse>(`${this.baseUrl}/decrease-quantity/${token}/${bookId}`, cart);
+  }
+
+  removeBook(token:string, bookId:number):Observable<CartResponse>{
+    return this.http.post<CartResponse>(`${this.baseUrl}/remove-book/${token}/${bookId}`, null);
+  }
 }
