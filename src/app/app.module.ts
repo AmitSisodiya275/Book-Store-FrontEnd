@@ -22,6 +22,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     BookDetailsComponent,
     DashboardComponent,
     ProfileComponent,
-    MyCartComponent
+    MyCartComponent,
   ],
   imports: [
     BrowserModule,
