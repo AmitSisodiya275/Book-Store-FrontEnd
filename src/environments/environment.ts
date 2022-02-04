@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   apiUrl:'http://localhost:8080/bookstore',
   bookApiUrl:'http://localhost:8080/books',
-  cartApiUrl:'http://localhost:8080/cart'
+  cartApiUrl:'http://localhost:8080/cart',
+  orderApiUrl:'http://localhost:8080/order'
 };
 
 /*
