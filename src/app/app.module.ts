@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { MyWishlistComponent } from './components/my-wishlist/my-wishlist.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { MyCartComponent } from './components/my-cart/my-cart.component';
     BookDetailsComponent,
     DashboardComponent,
     ProfileComponent,
-    MyCartComponent
+    MyCartComponent,
+    FilterPipe,
+    MyWishlistComponent
   ],
   imports: [
     BrowserModule,

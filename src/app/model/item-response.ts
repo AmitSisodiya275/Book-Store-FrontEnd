@@ -1,6 +1,6 @@
 import { BookDetails } from "./book-details";
 
-export class CartResponse{
+export class ItemResponse{
     public books: BookDetails[] = [];
-    public cartQuantity:number | undefined;
+    public itemsQuantity:number | undefined;
 }

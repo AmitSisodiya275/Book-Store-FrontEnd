@@ -25,7 +25,7 @@ export class MyCartComponent implements OnInit {
 
   getProductOfCart(){
     this.cartService.getProductOfCart(this.token).subscribe(
-      data=>{ console.log(data), this.books= data.books, this.cartValue= data.cartQuantity},
+      data=>{ console.log(data), this.books= data.books, this.cartValue= data.itemsQuantity},
       error=> { console.log(error)}
     );
   }

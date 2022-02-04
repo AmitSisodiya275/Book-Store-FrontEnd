@@ -28,7 +28,7 @@
             <div class="all-books" *ngFor="let book of books">
                 <div class="book-details" fxLayout="row" >
                     <div>
-                        <img class="bk-image" src="assets/images/dontMakeMeThink.png" alt="">
+                        <img class="bk-image" src="{{book.bookImages}}" alt="">
                     </div>
 
                     <div class="book-info" fxLayout="column" fxFlexOffset="7">
