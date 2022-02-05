@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookDetails } from 'src/app/model/book-details';
 import { Cart } from 'src/app/model/cart';
+import { Order } from 'src/app/model/order';
 import { CartService } from 'src/app/service/cart.service';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-my-cart',
@@ -15,9 +18,10 @@ export class MyCartComponent implements OnInit {
 
   books:BookDetails[]= [];
   cartValue: number | undefined;
+  order:Order = new Order;
+  id!:number;
 
-  constructor(private cartService: CartService) { }
-
+  constructor(private cartService: CartService, private orderService:OrderService, private router:Router) { }
  
   ngOnInit(): void {
     this.getProductOfCart();
@@ -25,7 +29,7 @@ export class MyCartComponent implements OnInit {
 
   getProductOfCart(){
     this.cartService.getProductOfCart(this.token).subscribe(
-      data=>{ console.log(data), this.books= data.books, this.cartValue= data.cartQuantity},
+      data=>{ console.log(data), this.books= data.books, this.cartValue= data.itemsQuantity},
       error=> { console.log(error)}
     );
   }
@@ -54,4 +58,16 @@ export class MyCartComponent implements OnInit {
       }
     )
   }
+
+  placeOrder(){
+    this.orderService.placeOrder(this.token, 4500).subscribe(
+      data=>{console.log(data), 
+        this.order = data,
+        console.log(this.order.id) , this.id = this.order.id, this.routeToSuccess(this.id)},
+      error=>{ console.log(error)}
+    )  }
+
+    routeToSuccess(id:number){
+      this.router.navigate([`/order-successfull/${id}`])
+    }
 }

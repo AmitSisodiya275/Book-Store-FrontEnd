@@ -3,8 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cart } from '../model/cart';
-import { CartResponse } from '../model/cart-response';
-
+import { ItemResponse } from '../model/item-response';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,15 +17,15 @@ export class CartService {
     return this.http.post<Object>(`${this.baseUrl}/add-to-cart/${token}/${bookId}`, cart);
   }
 
-  getProductOfCart(token:string):Observable<CartResponse>{
-    return this.http.get<CartResponse>(`${this.baseUrl}/get-cart-product/${token}`);
+  getProductOfCart(token:string):Observable<ItemResponse>{
+    return this.http.get<ItemResponse>(`${this.baseUrl}/get-cart-product/${token}`);
   }
 
-  decreaseOneQuantity(token:string, bookId:number, cart:Cart):Observable<CartResponse>{
-    return this.http.post<CartResponse>(`${this.baseUrl}/decrease-quantity/${token}/${bookId}`, cart);
+  decreaseOneQuantity(token:string, bookId:number, cart:Cart):Observable<ItemResponse>{
+    return this.http.post<ItemResponse>(`${this.baseUrl}/decrease-quantity/${token}/${bookId}`, cart);
   }
 
-  removeBook(token:string, bookId:number):Observable<CartResponse>{
-    return this.http.post<CartResponse>(`${this.baseUrl}/remove-book/${token}/${bookId}`, null);
+  removeBook(token:string, bookId:number):Observable<ItemResponse>{
+    return this.http.post<ItemResponse>(`${this.baseUrl}/remove-book/${token}/${bookId}`, null);
   }
 }

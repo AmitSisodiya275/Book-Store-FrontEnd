@@ -10,10 +10,12 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   bookList:BookDetails[]=[];
   totalBooks:number | undefined;
+  searchKey:string="";
   constructor(private bookService: BookService,private router: Router) { }
 
   ngOnInit(): void {
     this.getBookDetail();
+    this.searchBook();
   }
   getBookDetail() {
    
@@ -26,6 +28,12 @@ export class DashboardComponent implements OnInit {
   }
   onClickBook(id:number) {
     this.router.navigate([`book/${id}`]);
+  }
+
+  searchBook() {
+    this.bookService.search.subscribe(val => {
+      this.searchKey=val;
+    })
   }
 
 }

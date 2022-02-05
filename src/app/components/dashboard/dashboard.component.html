@@ -17,7 +17,7 @@
     </div>
 
     <div class="main">
-        <div class="book" *ngFor="let item of bookList" (click)="onClickBook(item.bookId)" >
+        <div class="book" *ngFor="let item of bookList | filter:searchKey:'bookName'" (click)="onClickBook(item.bookId)" >
                 <div class="image-content">
                     <button class="book-button">
                         <img class="image" src= {{item.bookImages}} >

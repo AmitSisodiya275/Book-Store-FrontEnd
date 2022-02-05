@@ -3,12 +3,14 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { BookDetails } from 'src/app/model/book-details';
 import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
 
   apiUrl:String=environment.bookApiUrl;
+  public search=new BehaviorSubject<string>("");
 
   constructor(private http:HttpClient) { }
 
