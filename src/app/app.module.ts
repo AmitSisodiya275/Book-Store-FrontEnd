@@ -27,7 +27,6 @@ import { MyOrderComponent } from './components/my-order/my-order.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

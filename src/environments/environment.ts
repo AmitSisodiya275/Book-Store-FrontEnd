@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  apiUrl:'http://localhost:8081/bookstore',
-  bookApiUrl:'http://localhost:8081/books',
-  cartApiUrl:'http://localhost:8081/cart',
+  apiUrl:'http://localhost:8080/bookstore',
+  bookApiUrl:'http://localhost:8080/books',
+  cartApiUrl:'http://localhost:8080/cart',
+  orderApiUrl:'http://localhost:8080/order',
   wishlistApiUrl: 'http://localhost:8081/wishlist'
 };
 
