@@ -157,3 +157,14 @@
     font: normal normal bold 18px/20px Roboto;
 
 }
+.circle-button {
+    border-radius: 35px;
+    background-color: #E2E2E2;
+}
+.button-row-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding-left: 30%;
+    // padding-bottom: 5px;
+}
