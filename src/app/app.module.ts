@@ -23,6 +23,8 @@ import { MyCartComponent } from './components/my-cart/my-cart.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { MyWishlistComponent } from './components/my-wishlist/my-wishlist.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MyOrderComponent } from './components/my-order/my-order.component';
+import { OrderSuccessComponent } from './components/order-success/order-success.component';
 
 
 
@@ -40,7 +42,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     ProfileComponent,
     MyCartComponent,
     FilterPipe,
-    MyWishlistComponent
+    MyWishlistComponent,
+    MyOrderComponent,
+    OrderSuccessComponent
   ],
   imports: [
     BrowserModule,
