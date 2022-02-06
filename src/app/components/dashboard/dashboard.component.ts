@@ -11,15 +11,16 @@ export class DashboardComponent implements OnInit {
   bookList:BookDetails[]=[];
   totalBooks:number | undefined;
   searchKey:string="";
+  pageNo:number=1;
   constructor(private bookService: BookService,private router: Router) { }
 
   ngOnInit(): void {
-    this.getBookDetail();
+    this.getBookDetail(this.pageNo);
     this.searchBook();
   }
-  getBookDetail() {
+  getBookDetail(num:number) {
    
-    this.bookService.getAllBooks().subscribe( bookdata => {
+    this.bookService.getAllBooks(num).subscribe( bookdata => {
       console.log(bookdata);
       this.bookList=bookdata;
       console.log(this.bookList);
@@ -34,6 +35,14 @@ export class DashboardComponent implements OnInit {
     this.bookService.search.subscribe(val => {
       this.searchKey=val;
     })
+  }
+  clickPageOne() {
+    this.pageNo=1;
+    this.getBookDetail(this.pageNo);
+  }
+  clickPageTwo() {
+    this.pageNo=2;
+    this.getBookDetail(this.pageNo);
   }
 
 }

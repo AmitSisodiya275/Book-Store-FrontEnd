@@ -7,7 +7,7 @@
 
     <div class="main-header">
         <label class="book-text">Books </label>
-        <label class="items">( {{totalBooks}} Items )</label>
+        <label class="items">(16 Items )</label>
         <select class="selectBox">
             <option>Sort By Relevance</option>
             <option>Price:Low to High</option>
@@ -37,5 +37,11 @@
                 </div>
             </div>
 
+        </div>
+        <div class="button-row-content ">
+            <button class="circle-button page-button">></button>
+            <button class="page-button" (click)="clickPageOne()">1</button>
+            <button class="page-button" (click)="clickPageTwo()">2</button>
+            <button class="circle-button page-button"><</button>
         </div>
 </div>
