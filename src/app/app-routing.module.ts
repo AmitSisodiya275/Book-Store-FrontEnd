@@ -11,6 +11,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
 import { MyWishlistComponent } from './components/my-wishlist/my-wishlist.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
+import { MyOrderComponent } from './components/my-order/my-order.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'sign-up', component: SignUpComponent},
@@ -22,6 +24,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'my-cart', component:MyCartComponent},
   { path: 'my-wishlist', component:MyWishlistComponent},
+  { path: 'my-orders', component:MyOrdersComponent},
   { path: 'order-successfull/:orderId', component:OrderSuccessComponent}
 ];
 

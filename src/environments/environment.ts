@@ -8,7 +8,7 @@ export const environment = {
   bookApiUrl:'http://localhost:8080/books',
   cartApiUrl:'http://localhost:8080/cart',
   orderApiUrl:'http://localhost:8080/order',
-  wishlistApiUrl: 'http://localhost:8081/wishlist'
+  wishlistApiUrl: 'http://localhost:8080/wishlist'
 };
 
 /*

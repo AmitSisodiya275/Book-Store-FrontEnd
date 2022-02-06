@@ -17,7 +17,7 @@ export class MyCartComponent implements OnInit {
   cartModel:Cart=new Cart();
 
   books:BookDetails[]= [];
-  cartValue: number | undefined;
+  cartValue: number = 0;
   order:Order = new Order;
   id!:number;
 
@@ -25,6 +25,7 @@ export class MyCartComponent implements OnInit {
  
   ngOnInit(): void {
     this.getProductOfCart();
+    this.cartService.cartCount.next(this.cartValue)
   }
 
   getProductOfCart(){

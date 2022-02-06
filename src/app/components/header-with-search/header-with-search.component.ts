@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookService } from 'src/app/service/book.service';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-header-with-search',
@@ -11,13 +12,17 @@ export class HeaderWithSearchComponent implements OnInit {
 
    personName:any;
    public searchTerm:string='';
-   @Input()
-   cartNo:number | undefined;
 
-  constructor(private router:Router,private service:BookService) { }
+   @Input() cartNo:number | undefined;
+
+   cartQuantity!:number;
+  constructor(private router:Router,private service:BookService, private cartSevice: CartService) { }
 
   ngOnInit(): void {
     this.personName= localStorage.getItem("name");
+    this.cartSevice.cartCount.subscribe(
+      data => this.cartQuantity = data
+    )
    }
 
   logout(){

@@ -15,4 +15,8 @@ export class OrderService {
   placeOrder(token:string, totalPrice:number):Observable<Order>{
     return this.http.post<Order>(`${this.baseUrl}/place-order/${token}/${totalPrice}`,null)
   }
+
+  getAllOrders(token:string):Observable<Order[]>{
+    return this.http.get<Order[]>(`${this.baseUrl}/get-all-orders/${token}`);
+  }
 }

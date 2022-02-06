@@ -23,7 +23,8 @@ import { MyCartComponent } from './components/my-cart/my-cart.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { MyWishlistComponent } from './components/my-wishlist/my-wishlist.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import {OrderSuccessComponent } from './components/order-success/order-success.component'
+import {OrderSuccessComponent } from './components/order-success/order-success.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component'
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {OrderSuccessComponent } from './components/order-success/order-success.c
     MyCartComponent,
     FilterPipe,
     MyWishlistComponent,
-    OrderSuccessComponent
+    OrderSuccessComponent,
+    MyOrdersComponent
   ],
   imports: [
     BrowserModule,

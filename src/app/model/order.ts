@@ -4,7 +4,7 @@ import { User } from "./user";
 
 export class Order{
     id!:number;
-    user: User[] | undefined;
+    user: User | undefined;
     cart: Cart | undefined;
     placedAt:Date | undefined;
     totalPrice:number | undefined;

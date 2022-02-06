@@ -3,11 +3,11 @@ import { Order } from 'src/app/model/order';
 import { OrderService } from 'src/app/service/order.service';
 
 @Component({
-  selector: 'app-my-order',
-  templateUrl: './my-order.component.html',
-  styleUrls: ['./my-order.component.scss']
+  selector: 'app-my-orders',
+  templateUrl: './my-orders.component.html',
+  styleUrls: ['./my-orders.component.scss']
 })
-export class MyOrderComponent implements OnInit {
+export class MyOrdersComponent implements OnInit {
 
   token:any = localStorage.getItem('token');
   orders:Order[] = [];

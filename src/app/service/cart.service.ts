@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cart } from '../model/cart';
 import { ItemResponse } from '../model/item-response';
@@ -10,6 +10,8 @@ import { ItemResponse } from '../model/item-response';
 export class CartService {
 
   baseUrl:string = environment.cartApiUrl;
+
+  public cartCount = new BehaviorSubject<number>(0);
 
   constructor(private http:HttpClient) { }
 

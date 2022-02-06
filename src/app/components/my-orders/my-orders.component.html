@@ -1,0 +1,29 @@
+<app-header-with-search></app-header-with-search>
+
+<div>
+    <div class="link">
+        <span>Home/</span><span class="wishlist">My Orders</span>
+    </div>
+
+    <div class="wishlist-content">
+        <!-- <div class="wishlist-header">
+            <span class="header-text">My Wishlist</span>
+            <span class="header-text count">(10)</span>
+        </div> -->
+        <div *ngFor="let order of orders">
+            <div class="wishlist-items row-content" *ngFor="let book of order.books">
+                <div class="book-info row-content">
+                    <img class="image" src={{book.bookImages}}>
+                    <div>
+                        <div class="bookname"> {{book.bookName}} </div>
+                        <div class="bookauthor"> {{book.bookAuthor}} </div>
+                        <div class="bookprice">Rs.{{book.bookPrice}} <span class="original-price">Rs.2000</span></div>
+                    </div>
+                </div>
+
+                <div class="date"> {{order.placedAt}}</div>
+            </div>
+        </div>
+
+    </div>
+</div>
