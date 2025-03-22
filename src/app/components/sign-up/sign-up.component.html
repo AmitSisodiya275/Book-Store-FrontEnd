@@ -23,7 +23,7 @@
 
                     <label class="pass-label-text row-content" for="password" >Password</label>
                     <input class="input row-content" type="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" name="password" required [(ngModel)]="model.password" #password="ngModel">
-                    <span *ngIf="!password.valid && password.touched" class="label-text error">Password should be in Proper Format!!</span>
+                    <span *ngIf="!password.valid && password.touched" class="label-text error">Password must be at least 8 characters long, contain one uppercase letter, one number, and one special character.</span>
 
                     <label class="label-text row-content" for="mobile" >Mobile Number</label>
                     <input class="input row-content" type="number" id="mobile" name="mobile" pattern="[0-9]{10}$" required [(ngModel)]="model.mobileNo" #mobile="ngModel">
