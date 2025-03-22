@@ -12,11 +12,13 @@ export class DashboardComponent implements OnInit {
   totalBooks:number | undefined;
   searchKey:string="";
   pageNo:number=1;
+  role:any;
   constructor(private bookService: BookService,private router: Router) { }
 
   ngOnInit(): void {
     this.getBookDetail(this.pageNo);
     this.searchBook();
+    this.role = localStorage.getItem("role");
   }
   getBookDetail(num:number) {
    

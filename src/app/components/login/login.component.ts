@@ -21,7 +21,11 @@ export class LoginComponent implements OnInit {
   }
   loginUser() {
     this.service.loginUser(this.model).subscribe(
-      data=>{ console.log(data) , this.fetchedToken = data,  localStorage.setItem( "token", this.fetchedToken.token), localStorage.setItem("name", this.fetchedToken.personName),this.router.navigate(['dashboard'])},
+      data=>{ console.log(data) , this.fetchedToken = data,
+        localStorage.setItem( "token", this.fetchedToken.token),
+        localStorage.setItem("name", this.fetchedToken.personName),
+        localStorage.setItem("role", this.fetchedToken.role),
+        this.router.navigate(['dashboard'])},
       error=>{ console.log(error),this.isUserLogIn()}
     );
     
