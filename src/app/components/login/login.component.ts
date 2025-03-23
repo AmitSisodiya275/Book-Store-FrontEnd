@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   model:UserLogin = new UserLogin();
   fetchedToken:Token = new Token();
   islogIn:boolean=true;
+  password: string = '';
+  passwordType: string = 'password';
 
   constructor(private service:UserService , private router:Router) { }
 
@@ -43,6 +45,9 @@ export class LoginComponent implements OnInit {
     }
     return false;
   }
-
+  
+  togglePasswordVisibility() {
+    this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
+  }
 
 }

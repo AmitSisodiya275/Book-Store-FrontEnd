@@ -11,7 +11,8 @@ import { UserService } from 'src/app/service/user.service';
 export class SignUpComponent implements OnInit {
 
   model:User = new User();
-
+  password: string = '';
+  passwordType: string = 'password';
   constructor(private service:UserService, private router:Router) { }
 
   ngOnInit(): void {
@@ -22,5 +23,9 @@ export class SignUpComponent implements OnInit {
       data=>{this.model= data, this.router.navigate(['/login'])},
       error=>(console.log(error))
     );
+  }
+
+  togglePasswordVisibility() {
+    this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
   }
 }

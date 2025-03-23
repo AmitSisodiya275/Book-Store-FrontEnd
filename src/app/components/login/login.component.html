@@ -19,8 +19,14 @@
                     <input class="input row-content" type="email" id="email" name="email" required email
                         [(ngModel)]="model.email">
                     <label class="pass-label-text row-content" for="password">Password</label>
-                    <input class="input row-content" type="password" id="password" name="password"
+                    <div class="input-box">
+                    <input class="input row-content" type="password" [type]="passwordType" id="password" name="password"
                         [(ngModel)]="model.password">
+                        <img 
+                        [src]="passwordType === 'password' ? 'assets/images/hide_eye_icon.jpeg' : 'assets/images/show_eye.png'" 
+                        alt="toggle password visibility" class="toggle-icon" (click)="togglePasswordVisibility()"
+                      />
+                    </div>
                     <div class="label-password row-content" for="password" routerLink="/forgot">Forgot Password?</div>
                 </div>
                 <span *ngIf="!isUserLoggedIn()" class="label-text error">Email id or password is wrong</span>

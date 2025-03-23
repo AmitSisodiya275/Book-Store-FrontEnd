@@ -22,9 +22,16 @@
                     <input class="input row-content" type="email" id="email" name="email" required email [(ngModel)]="model.emailId" #email="ngModel"> <span *ngIf="!email.valid && email.touched" class="label-text error">Email is not Valid!!</span>
 
                     <label class="pass-label-text row-content" for="password" >Password</label>
-                    <input class="input row-content" type="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" name="password" required [(ngModel)]="model.password" #password="ngModel">
+                    <div class="input-container">
+                    <div class="input-box">
+                    <input class="input row-content" type="password" [type]="passwordType"  id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" name="password" required [(ngModel)]="model.password" #password="ngModel">
+                    <img 
+                        [src]="passwordType === 'password' ? 'assets/images/hide_eye_icon.jpeg' : 'assets/images/show_eye.png'" 
+                        alt="toggle password visibility" class="toggle-icon" (click)="togglePasswordVisibility()"
+                      />
+                    </div>
                     <span *ngIf="!password.valid && password.touched" class="label-text error">Password must be at least 8 characters long, contain one uppercase letter, one number, and one special character.</span>
-
+                </div>
                     <label class="label-text row-content" for="mobile" >Mobile Number</label>
                     <input class="input row-content" type="number" id="mobile" name="mobile" pattern="[0-9]{10}$" required [(ngModel)]="model.mobileNo" #mobile="ngModel">
                     <span *ngIf="!mobile.valid && mobile.touched" class="label-text error">Mobile Number must be 10 digit</span>
