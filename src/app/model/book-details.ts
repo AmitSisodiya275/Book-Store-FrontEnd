@@ -6,6 +6,7 @@ export class BookDetails {
     bookImages: string | undefined;
     bookName: string | undefined;
     bookPrice: any;
+    originalPrice : any;
     bookRating: any | undefined;
     inCartQuantity!: number;
 }
