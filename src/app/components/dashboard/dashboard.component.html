@@ -14,7 +14,7 @@
             <option>Price:High to Low</option>
             <option>Newest Arrivals</option>
         </select>
-        <button class="add-book" *ngIf="(role =='Admin')" > Add Books</button>
+        <button class="add-book" *ngIf="(role =='Admin')" (click)="navigateToAddBook()"> Add Books</button>
     </div>
 
     <div class="main">

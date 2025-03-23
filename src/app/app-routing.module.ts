@@ -13,6 +13,7 @@ import { MyWishlistComponent } from './components/my-wishlist/my-wishlist.compon
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { MyOrderComponent } from './components/my-order/my-order.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
 const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'sign-up', component: SignUpComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'my-cart', component:MyCartComponent},
   { path: 'my-wishlist', component:MyWishlistComponent},
   { path: 'my-orders', component:MyOrdersComponent},
-  { path: 'order-successfull/:orderId', component:OrderSuccessComponent}
+  { path: 'order-successfull/:orderId', component:OrderSuccessComponent},
+  { path: 'add-book', component:AddBookComponent}
 ];
 
 @NgModule({

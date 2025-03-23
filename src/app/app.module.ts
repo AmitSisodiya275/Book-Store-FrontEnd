@@ -24,7 +24,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { MyWishlistComponent } from './components/my-wishlist/my-wishlist.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import {OrderSuccessComponent } from './components/order-success/order-success.component';
-import { MyOrdersComponent } from './components/my-orders/my-orders.component'
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
+import { AddBookComponent } from './components/add-book/add-book.component'
 
 
 
@@ -44,7 +45,8 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component'
     FilterPipe,
     MyWishlistComponent,
     OrderSuccessComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,

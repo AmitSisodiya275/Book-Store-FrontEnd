@@ -47,4 +47,8 @@ export class DashboardComponent implements OnInit {
     this.getBookDetail(this.pageNo);
   }
 
+  navigateToAddBook(){
+    this.router.navigate([`add-book`]);
+  }
+
 }
