@@ -26,7 +26,10 @@ export class AddBookComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(" Add book called")
+    if (!this.model) {
+      console.error("Error: this.model is undefined");
+      return;
+    }
     const formData = new FormData();
     formData.append('bookName',this.model.bookName || '');
     formData.append('bookAuthor', this.model.bookAuthor || '');
@@ -36,4 +39,4 @@ export class AddBookComponent implements OnInit {
     // formData.append('bookImages', this.model.bookImages as Blob);
     this.bookUplaodService.uploadBook(formData, this.model.bookImages);
     }
-}
+  }
