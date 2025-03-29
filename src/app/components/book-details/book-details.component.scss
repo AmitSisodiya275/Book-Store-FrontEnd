@@ -31,15 +31,15 @@
 .img{
     padding: 10%;
 }
-// .big-image{
-//     border: 1px solid grey;
-// }
-.big-img{
-    // padding: 10%;
-    padding:  10% 0;
-    width: 382px;
-    height: 464px;
-    margin-left: 60px;
+
+.big-img {
+    width: 300px;  /* Set the fixed width */
+    height: 400px; /* Set the fixed height */
+    object-fit: cover; /* Ensure the image covers the entire area without distortion */
+    display: block; /* To remove any space below the image */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+    margin-top: 50px; /* Add margin from the top */
 }
 .about-book{
     margin-left: 20%;
@@ -59,8 +59,12 @@
     color: #878787;
     opacity: 1;
 }
-.cart-wishlist-button{
-    margin-top: -60px;
+.cart-wishlist-button {
+    margin-top: 20px; /* Adjust this value to your desired margin between the image and the button */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* You can also add any other styles for cart-wishlist-button here */
 }
 
 .rating{

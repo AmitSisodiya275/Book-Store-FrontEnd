@@ -14,7 +14,7 @@
         <textarea id="bookDescription" [(ngModel)]="model.bookDescription" name="bookDescription" required></textarea>
 
         <label for="bookImages">Book Images (URL):</label>
-        <input type="file" (change)="onFileSelected($event)"/>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*"/>
 
         <label for="availableBookQuantity">Available Quantity:</label>
         <input type="number" id="availableBookQuantity" [(ngModel)]="model.availableBookQuantity" name="availableBookQuantity" required>
