@@ -1,11 +1,33 @@
-
-.header {
-  height: 60px;
+.header{
   background: #A03037 0% 0% no-repeat padding-box;
   opacity: 1;
-
+  display: flex;
+  flex-direction: row;
+  height: 42px;
+  align-items: center;
+  padding: 0.5% 0;
 }
-
+.spacer{
+  width: 10%;
+}
+.spacer-between{
+  width: 3%;
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  cursor: pointer;
+}
+.logo-text {
+  text-align: left;
+  font: normal normal normal 20px/26px Roboto;
+  letter-spacing: 0px;
+  padding-left: 10px;
+  color: #FFFFFF;
+  text-transform: capitalize;
+  opacity: 1;
+}
 .image {
   margin-left: 130px;
 
