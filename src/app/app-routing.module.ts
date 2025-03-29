@@ -14,6 +14,7 @@ import { OrderSuccessComponent } from './components/order-success/order-success.
 import { MyOrderComponent } from './components/my-order/my-order.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
+import { UpdateBookComponent } from './components/update-book/update-book.component';
 const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'sign-up', component: SignUpComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'my-wishlist', component:MyWishlistComponent},
   { path: 'my-orders', component:MyOrdersComponent},
   { path: 'order-successfull/:orderId', component:OrderSuccessComponent},
-  { path: 'add-book', component:AddBookComponent}
+  { path: 'add-book', component:AddBookComponent},
+  { path: 'update-book', component:UpdateBookComponent}
 ];
 
 @NgModule({

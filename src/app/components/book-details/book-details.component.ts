@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route } from '@angular/router';
 import { BookDetails } from 'src/app/model/book-details';
 import { Cart } from 'src/app/model/cart';
 import { BookService } from 'src/app/service/book.service';
 import { CartService } from 'src/app/service/cart.service';
 import { WishlistService } from 'src/app/service/wishlist.service';
 import { Wishlist } from 'src/app/model/wishlist';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-details',
@@ -23,7 +24,7 @@ export class BookDetailsComponent implements OnInit {
   role:any;
  
 
-  constructor( private service:BookService, private route: ActivatedRoute,
+  constructor( private service:BookService, private route: ActivatedRoute, private router: Router, 
                 private cartService:CartService,private wishlistService:WishlistService) { }
 
   ngOnInit(): void {
@@ -55,5 +56,9 @@ export class BookDetailsComponent implements OnInit {
       incomingdata=>{console.log(incomingdata)},
       error=>{console.log(error)}
     );
+  }
+
+  navigateToUpdateBook(){
+    this.router.navigate([`update-book`]);
   }
 }

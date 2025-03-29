@@ -25,7 +25,8 @@ import { MyWishlistComponent } from './components/my-wishlist/my-wishlist.compon
 import { ProfileComponent } from './components/profile/profile.component';
 import {OrderSuccessComponent } from './components/order-success/order-success.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
-import { AddBookComponent } from './components/add-book/add-book.component'
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { UpdateBookComponent } from './components/update-book/update-book.component'
 
 
 
@@ -46,7 +47,8 @@ import { AddBookComponent } from './components/add-book/add-book.component'
     MyWishlistComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    AddBookComponent
+    AddBookComponent,
+    UpdateBookComponent
   ],
   imports: [
     BrowserModule,

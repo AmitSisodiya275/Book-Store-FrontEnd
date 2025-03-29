@@ -26,7 +26,7 @@
                 </div>
                 <div class="delete-update-button" *ngIf="(role =='Admin')" fxLayout="row" fxLayoutAlign="space-between center">
                     <button fxFlex="45" class="cart-btn">Delete</button>
-                    <button fxFlex="45" class="wishlist-btn" alt=""> Update</button>
+                    <button fxFlex="45" class="wishlist-btn" alt="" (click)="navigateToUpdateBook()"> Update</button>
                 </div>
             </div>
         </div>
