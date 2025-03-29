@@ -4,11 +4,12 @@
 
 export const environment = {
   production: false,
-  apiUrl:'http://localhost:8080/bookstore',
-  bookApiUrl:'http://localhost:8080/books',
-  cartApiUrl:'http://localhost:8080/cart',
-  orderApiUrl:'http://localhost:8080/order',
-  wishlistApiUrl: 'http://localhost:8080/wishlist'
+  apiUrl:'http://192.168.0.16:8080/bookstore',
+  bookApiUrl:'http://192.168.0.16:8080/books',
+  cartApiUrl:'http://192.168.0.16:8080/cart',
+  orderApiUrl:'http://192.168.0.16:8080/order',
+  wishlistApiUrl: 'http://192.168.0.16:8080/wishlist',
+  addBookApiUrl: 'http://192.168.0.16:8080/books/add-book'
 };
 
 /*

@@ -20,6 +20,7 @@ export class BookDetailsComponent implements OnInit {
   token:any;
   cartModel:Cart = new Cart();
   wishlistModel:Wishlist=new Wishlist();
+  role:any;
  
 
   constructor( private service:BookService, private route: ActivatedRoute,
@@ -29,6 +30,7 @@ export class BookDetailsComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.getSingleBook();
     this.token = localStorage.getItem('token');
+    this.role = localStorage.getItem("role");
   }
 
   getSingleBook(){

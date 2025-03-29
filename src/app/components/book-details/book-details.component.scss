@@ -67,6 +67,14 @@
     /* You can also add any other styles for cart-wishlist-button here */
 }
 
+.delete-update-button{
+    margin-top: 20px; /* Adjust this value to your desired margin between the image and the button */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* You can also add any other styles for cart-wishlist-button here */
+}
+
 .rating{
     background: #388E3C 0% 0% no-repeat padding-box;
     border-radius: 1px;
