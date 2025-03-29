@@ -8,7 +8,7 @@
     <div class="main-header">
         <label class="book-text">Books </label>
         <label class="items">( {{bookList.length}} Items)</label>
-        <select class="selectBox">
+        <select class="selectBox" (change)="onSortChange($event)">
             <option>Sort By Relevance</option>
             <option>Price:Low to High</option>
             <option>Price:High to Low</option>

@@ -50,5 +50,37 @@ export class DashboardComponent implements OnInit {
   navigateToAddBook(){
     this.router.navigate([`add-book`]);
   }
+  onSortChange(event: any) {
+    const sortOption = event.target.value;
 
+    if (sortOption === 'priceLowToHigh') {
+      this.sortBooksByPriceLowToHigh();
+    } else if (sortOption === 'priceHighToLow') {
+      this.sortBooksByPriceHighToLow();
+    } else if (sortOption === 'newestArrivals') {
+     // this.sortBooksByNewestArrivals();
+    } else {
+      this.sortBooksByRelevance(); // Default to relevance
+    }
+  }
+
+  // Sort books by price: Low to High
+  sortBooksByPriceLowToHigh() {
+    this.bookList.sort((a, b) => a.bookPrice - b.bookPrice);
+  }
+
+  // Sort books by price: High to Low
+  sortBooksByPriceHighToLow() {
+    this.bookList.sort((a, b) => b.bookPrice - a.bookPrice);
+  }
+
+  // Sort books by newest arrivals (based on releaseDate)
+  // sortBooksByNewestArrivals() {
+  //   this.bookList.sort((a, b) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime());
+  // }
+
+  // Sort books by relevance (example: by book name or rating, depending on your criteria)
+  sortBooksByRelevance() {
+    this.bookList.sort((a, b) => b.bookRating - a.bookRating);  // Example: sort by rating
+  }
 }
