@@ -3,7 +3,7 @@
 <div class="container">
    
     <h1>Add New Book</h1>
-    <form #addBookForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #addBookForm="ngForm" (ngSubmit)="addBook()">
         <label for="bookName">Book Name:</label>
         <input type="text" id="bookName" [(ngModel)]="model.bookName" name="bookName" required>
 

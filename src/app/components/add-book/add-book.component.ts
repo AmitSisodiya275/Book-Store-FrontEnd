@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/service/book.service';
 import { AddBookDetails } from 'src/app/model/add-book';
-import { Observable } from 'rxjs';
-import { BookUploadService } from 'src/app/service/book-upload.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book',
@@ -13,7 +12,7 @@ export class AddBookComponent implements OnInit {
   model:AddBookDetails = new AddBookDetails();
   selectedFile: File | null = null;
   imageUrl: string | null = null;
-  constructor(private bookUplaodService : BookUploadService) { }
+  constructor(private bookService : BookService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,22 +20,17 @@ export class AddBookComponent implements OnInit {
   onFileSelected(event: any): void {
     const file = event.target.files[0];
     if (file) {
-      this.model.bookImages = file;  // Store the selected file
+      this.model.bookImages = file; 
     }
   }
 
-  onSubmit(): void {
-    if (!this.model) {
-      console.error("Error: this.model is undefined");
-      return;
-    }
-    const formData = new FormData();
-    formData.append('bookName',this.model.bookName || '');
-    formData.append('bookAuthor', this.model.bookAuthor || '');
-    formData.append('bookDescription', this.model.bookDescription || '');
-    formData.append('bookPrice', this.model.bookPrice || '');
-    formData.append('bookRating', this.model.bookRating || '');
-    // formData.append('bookImages', this.model.bookImages as Blob);
-    this.bookUplaodService.uploadBook(formData, this.model.bookImages);
+    addBook() : void {
+      console.log("book name " + this.model.bookName)
+      this.bookService.addBook(this.model).subscribe(
+        data=>{this.model= data,
+           this.router.navigate(['/dashboard'])
+          },
+        error=>(console.log(error))
+      );
     }
   }

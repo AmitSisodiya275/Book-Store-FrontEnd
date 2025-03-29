@@ -1,12 +1,12 @@
 export class AddBookDetails {
     availableBookQuantity!: number;
-    bookAuthor: string | undefined;
-    bookDescription: string | undefined;
+    bookAuthor: string;
+    bookDescription: string;
     bookImages: File | any;
-    bookName: string | undefined;
+    bookName: string;
     bookPrice: any;
     originalPrice : any;
-    bookRating: any | undefined;
+    bookRating: any;
     inCartQuantity!: number;
     
 }
