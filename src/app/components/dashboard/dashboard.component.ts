@@ -53,9 +53,9 @@ export class DashboardComponent implements OnInit {
   onSortChange(event: any) {
     const sortOption = event.target.value;
 
-    if (sortOption === 'priceLowToHigh') {
+    if (sortOption === 'Price:Low to High') {
       this.sortBooksByPriceLowToHigh();
-    } else if (sortOption === 'priceHighToLow') {
+    } else if (sortOption === 'Price:High to Low') {
       this.sortBooksByPriceHighToLow();
     } else if (sortOption === 'newestArrivals') {
      // this.sortBooksByNewestArrivals();
