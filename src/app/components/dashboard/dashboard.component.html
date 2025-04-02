@@ -7,7 +7,17 @@
 
     <div class="main-header">
         <label class="book-text">Books </label>
-        <label class="items">( {{bookList.length}} Items)</label>
+        <label class="items">( {{totalBooks}} Items)</label>
+        <label class="mood">Mood to Read</label>
+        <select class="moodBox" (change)="groupByCategory($event)">
+            <option>All</option>
+            <option>Science-Fiction</option>
+            <option>Mystry & Thriller</option>
+            <option>Horror</option>
+            <option>Romance</option>
+            <option>Adventure</option>
+            <option>Fantasy</option>
+        </select>
         <select class="selectBox" (change)="onSortChange($event)">
             <option>Sort By Relevance</option>
             <option>Price:Low to High</option>
@@ -40,10 +50,16 @@
             </div>
 
         </div>
-        <div class="button-row-content ">
-            <button class="circle-button page-button">></button>
-            <button class="page-button" (click)="clickPageOne()">1</button>
-            <button class="page-button" (click)="clickPageTwo()">2</button>
-            <button class="circle-button page-button"><</button>
+        <div class="button-row-content">
+            <button class="circle-button page-button" (click)="prevPage()" [disabled]="currentPage === 1"><</button>
+        
+            <button *ngFor="let page of pagesArray" 
+                    class="page-button" 
+                    (click)="goToPage(page)" 
+                    [class.active]="page === currentPage">
+                {{ page }}
+            </button>
+        
+            <button class="circle-button page-button" (click)="nextPage()" [disabled]="currentPage === totalPages">></button>
         </div>
 </div>

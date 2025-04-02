@@ -19,13 +19,31 @@
                     <img class="big-img" src={{model.bookImages}} alt="">
                     
                 </div>
-                <div class="cart-wishlist-button" *ngIf="(role !='Admin')" fxLayout="row" fxLayoutAlign="space-between center">
-                    <button fxFlex="45" class="cart-btn" (click)="addBookToCart()" [disabled]="model.inCartQuantity >= 1" >ADD TO BAG</button>
+                <!-- <div class="cart-wishlist-button" *ngIf="(role !='Admin')" fxLayout="row" fxLayoutAlign="space-between center">
+                    <button fxFlex="45" class="cart-btn" (click)="addBookToCart()" >ADD TO BAG</button>
                     <button fxFlex="45" class="wishlist-btn"> <img class="heart-icon" src="assets/book-info/heart.svg"
                             alt=""> WISHLIST</button>
+                </div> -->
+                <div class="cart-wishlist-button" *ngIf="(role !='Admin')" fxLayout="row" fxLayoutAlign="space-between center">
+                    <button fxFlex="45" class="cart-btn" 
+                            (click)="addBookToCart()" 
+                            [class.clicked]="isCartClicked" 
+                            (mousedown)="isCartClicked = true" 
+                            (mouseup)="isCartClicked = false">
+                        ADD TO BAG
+                    </button>
+                
+                    <button fxFlex="45" class="wishlist-btn" 
+                            (click)="addToWishlist()" 
+                            [class.clicked]="isWishlistClicked" 
+                            (mousedown)="isWishlistClicked = true" 
+                            (mouseup)="isWishlistClicked = false">
+                        <img class="heart-icon" src="assets/book-info/heart.svg" alt=""> WISHLIST
+                    </button>
                 </div>
+                
                 <div class="delete-update-button" *ngIf="(role =='Admin')" fxLayout="row" fxLayoutAlign="space-between center">
-                    <button fxFlex="45" class="cart-btn">Delete</button>
+                    <button fxFlex="45" class="cart-btn" (click)="deleteBook()">Delete</button>
                     <button fxFlex="45" class="wishlist-btn" alt="" (click)="navigateToUpdateBook()"> Update</button>
                 </div>
             </div>
@@ -55,10 +73,15 @@
             <div>
                 <hr class="line">
             </div>
-            <div class="cust-feedback">
-                Customer Feedback
+            <app-book-preview [bookDescription]=  "model.bookSampleChapter"></app-book-preview>
+
+            <div>
+                <hr class="line">
             </div>
-            <div class="rating-and-form" fxLayout="column">
+            <!-- <div class="cust-feedback">
+                Customer Feedback
+            </div> -->
+            <!-- <div class="rating-and-form" fxLayout="column">
                 <span class="overall-text">Overall rating</span>
                 <div class="rating-star"><mat-icon *ngFor="let _ of [].constructor(5)">star_border</mat-icon></div>
                 <div class="text-box" fxFlex="100">
@@ -67,7 +90,7 @@
                 <div class="submit" fxLayoutAlign="end end">
                     <button class="sub-btn">Submit</button>
                 </div>
-            </div>
+            </div> -->
 
             <!-- <div class="comment-section" fxLayout="row">
                 <div>

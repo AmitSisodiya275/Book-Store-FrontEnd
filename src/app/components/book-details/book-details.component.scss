@@ -238,3 +238,11 @@
     opacity: 1;
     padding: 2% 0;
 }
+.cart-btn, .wishlist-btn {
+    transition: transform 0.1s ease, background-color 0.3s;
+}
+
+.cart-btn.clicked, .wishlist-btn.clicked {
+    transform: scale(0.95);
+    background-color: #d1d1d1; 
+}

@@ -16,6 +16,10 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -26,7 +30,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {OrderSuccessComponent } from './components/order-success/order-success.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
-import { UpdateBookComponent } from './components/update-book/update-book.component'
+import { UpdateBookComponent } from './components/update-book/update-book.component';
+import { BookPreviewComponent, BookPreviewDialogComponent } from './components/book-preview/book-preview.component';
 
 
 
@@ -48,7 +53,9 @@ import { UpdateBookComponent } from './components/update-book/update-book.compon
     OrderSuccessComponent,
     MyOrdersComponent,
     AddBookComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    BookPreviewComponent,
+    BookPreviewDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,10 @@ import { UpdateBookComponent } from './components/update-book/update-book.compon
     FlexLayoutModule,
     MatMenuModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

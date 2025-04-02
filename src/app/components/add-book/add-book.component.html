@@ -4,8 +4,19 @@
    
     <h1>Add New Book</h1>
     <form #addBookForm="ngForm" (ngSubmit)="addBook()">
+
+        <label for="bookCategory">Book Category</label>
+        <select class="selectBox" (change)="onSortChange($event)">
+            <option>Science-Fiction</option>
+            <option>Mystry & Thriller</option>
+            <option>Horror</option>
+            <option>Romance</option>
+            <option>Adventure</option>
+            <option>Fantasy</option>
+        </select>
+        
         <label for="bookName">Book Name:</label>
-        <input type="text" id="bookName" [(ngModel)]="model.bookName" name="bookName" required>
+        <input type="text" id="bookName" [(ngModel)]="model.bookName" name="bookName" #bookName="ngModel" required> <span *ngIf="!bookName.valid && bookName.touched" class="label-text error">Book Name is Required!!</span>
 
         <label for="bookAuthor">Author:</label>
         <input type="text" id="bookAuthor" [(ngModel)]="model.bookAuthor" name="bookAuthor" required>
@@ -13,7 +24,10 @@
         <label for="bookDescription">Description:</label>
         <textarea id="bookDescription" [(ngModel)]="model.bookDescription" name="bookDescription" required></textarea>
 
-        <label for="bookImages">Book Images (URL):</label>
+        <label for="bookSampleChapter">Sample Chapter:</label>
+        <textarea id="bookDescription" [(ngModel)]="model.bookSampleChapter" name="bookSampleChapter" required></textarea>
+
+        <label for="bookImages">Book Image:</label>
         <input type="file" (change)="onFileSelected($event)" accept="image/*"/>
 
         <label for="availableBookQuantity">Available Quantity:</label>
@@ -23,16 +37,16 @@
         <input type="number" id="bookPrice" [(ngModel)]="model.bookPrice" name="bookPrice" step="0.01" required>
 
         <label for="originalPrice">Original Price:</label>
-        <input type="number" id="originalPrice" [(ngModel)]="model.originalPrice" name="originalPrice" step="0.01">
+        <input type="number" id="originalPrice" [(ngModel)]="model.originalPrice" name="originalPrice">
 
         <label for="bookRating">Book Rating (Out of 5):</label>
         <input type="number" id="bookRating" [(ngModel)]="model.bookRating" name="bookRating" min="0" max="5" step="0.1" required>
 
-        <label for="inCartQuantity">In Cart Quantity:</label>
-        <input type="number" id="inCartQuantity" name="inCartQuantity" [(ngModel)]="model.inCartQuantity" name="incartquentity" required>
+        <!-- <label for="inCartQuantity">In Cart Quantity:</label>
+        <input type="number" id="inCartQuantity" name="inCartQuantity" [(ngModel)]="model.inCartQuantity" name="incartquentity" required> -->
 
         <!-- <button type="submit" (click)="onSubmit()">Add Book</button> -->
-        <button type="submit" 
+        <button type="submit" [disabled]="!addBookForm.valid"
         class="submitButton sign-button-text" >Add Book</button>
     </form>
 </div>

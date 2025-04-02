@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cart } from '../model/cart';
 import { ItemResponse } from '../model/item-response';
+import { CartResponse } from '../model/cart-response';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,8 +20,8 @@ export class CartService {
     return this.http.post<Object>(`${this.baseUrl}/add-to-cart/${token}/${bookId}`, cart);
   }
 
-  getProductOfCart(token:string):Observable<ItemResponse>{
-    return this.http.get<ItemResponse>(`${this.baseUrl}/get-cart-product/${token}`);
+  getProductOfCart(token:string):Observable<CartResponse>{
+    return this.http.get<CartResponse>(`${this.baseUrl}/get-cart-product/${token}`);
   }
 
   decreaseOneQuantity(token:string, bookId:number, cart:Cart):Observable<ItemResponse>{

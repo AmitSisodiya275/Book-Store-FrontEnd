@@ -1,4 +1,4 @@
-<app-header-with-search [cartNo]="cartValue"></app-header-with-search>
+<!-- <app-header-with-search [cartNo]="cartValue"></app-header-with-search>
 <div class="whole-page">
     <div class="page-content" fxLayout="column" fxFlexOffset="11" fxFlex="50">
 
@@ -10,52 +10,116 @@
                 <div class="cart-count">My Cart ( {{cartValue}} )
                 </div>
                 <div class="location-box" fxFlex="30">
-                    <!-- 
-                    <mat-select class="location-tab">
-                        <mat-option>
-                            <mat-icon>location_on</mat-icon> Current Location</mat-option>
-                        <mat-option>Mumbai</mat-option>
-                        <mat-option>Goa</mat-option>
-                    </mat-select> -->
-                    <select name="location" id="" class="location-tab"> -->
-                        <option value="" class="select-text"> Use Current Location</option>
-                        <option value="">Mumbai</option>
-                        <option value="">Goa</option>
+                    <select name="location" id="" class="location-tab">
+                        <option *ngFor="let state of statesList" [value]="state">{{ state }}</option>
                     </select>
                 </div>
             </div>
 
-            <div class="all-books" *ngFor="let book of books">
+            <div class="all-books" *ngFor="let singleCart of cartItems">
                 <div class="book-details" fxLayout="row">
                     <div>
-                        <img class="bk-image" src= {{book.bookImages}} alt="">
+                        <img class="bk-image" src= {{singleCart.book.bookImages}} alt="">
                     </div>
 
                     <div class="book-info" fxLayout="column" fxFlexOffset="7">
-                        <div class="book-name"> {{book.bookName}} </div>
-                        <div class="author"> {{book.bookAuthor}} </div>
+                        <div class="book-name"> {{singleCart.book.bookName}} </div>
+                        <div class="author"> {{singleCart.book.bookAuthor}} </div>
                         <div class="price-tag" fxLayout="row" fxFlexAlign="start center">
-                            <div class="price">Rs. {{book.bookPrice * book.inCartQuantity}} </div>
-                            <div class="actual-price" fxFlexAlign="center">Rs. 2000</div>
+                            <div class="price">Rs. {{singleCart.book.bookPrice * singleCart.quantity}} </div>
+                            <div class="actual-price" fxFlexAlign="center">Rs. {{singleCart.book.originalPrice}} </div>
                         </div>
-                        <div class="book-quantity author">Available Quantity : {{book.availableBookQuantity - book.inCartQuantity}} </div>
+                        <div class="book-quantity author">Available Quantity : {{singleCart.book.availableBookQuantity - singleCart.quantity}} </div>
                     </div>
 
                 </div>
                 <div class="quantity-adjustment" fxLayout="row">
                     <button class="minus-button btn" fxFlexOffset="18"
-                       [disabled]="book.inCartQuantity == 1" (click)="decreaseOneQuantity(book.bookId)">-</button>
-                    <button disabled class="btn"> {{book.inCartQuantity}} </button>
+                       [disabled]="singleCart.quantity == 1" (click)="decreaseOneQuantity(singleCart.book.bookId)">-</button>
+                    <button disabled class="btn"> {{singleCart.quantity}} </button>
                     <button class="minus-button btn plus"
-                        [disabled]="book.inCartQuantity == book.availableBookQuantity "
-                        (click)="addOneQuantity(book.bookId)">+</button>
-                    <button class="remove-button" (click)="removeBook(book.bookId)" >Remove</button>
+                        [disabled]="singleCart.quantity == singleCart.book.availableBookQuantity "
+                        (click)="addOneQuantity(singleCart.book.bookId)">+</button>
+                    <button class="remove-button" (click)="removeBook(singleCart.book.bookId)" >Remove</button>
                 </div>
             </div>
 
             <div class="place-order-btn">
                 <button class="place-order" fxFlexOffset="70" (click)="placeOrder()" >PLACE ORDER</button>
             </div>
+
+        </div>
+    </div>
+</div> -->
+
+<app-header-with-search [cartNo]="cartValue"></app-header-with-search>
+
+<div class="whole-page">
+    <div class="page-content" fxLayout="column" fxFlexOffset="11" fxFlex="50">
+        <div class="cart-path" fxLayout="row">
+            <span class="home-text">Home /</span><span class="cart-text"> My Cart</span>
+        </div>
+
+        <div class="cart-box" fxLayout="column">
+            <div class="cart-count-loc" fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="cart-count">My Cart ( {{cartValue}} )</div>
+                
+                <div class="location-box" fxFlex="30">
+                </div>
+            </div>
+            <div class="all-books" *ngFor="let singleCart of cartItems">
+                <div class="book-details" fxLayout="row">
+                    <img class="bk-image" src="{{ singleCart.book.bookImages }}" alt="">
+                    <div class="book-info" fxLayout="column">
+                        <div class="book-name">{{ singleCart.book.bookName }}</div>
+                        <div class="author">{{ singleCart.book.bookAuthor }}</div>
+                        <div class="price-availability" fxLayout="row" fxLayoutAlign="space-between center">
+                            <div class="price">Rs. {{ singleCart.book.bookPrice * singleCart.quantity }}</div>
+                            <div class="available-qty">Available: {{ singleCart.book.availableBookQuantity }}</div>
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="quantity-adjustment">
+                    <button class="btn" [disabled]="singleCart.quantity == 1" (click)="decreaseOneQuantity(singleCart.book.bookId)">-</button>
+                    <button disabled class="btn"> {{ singleCart.quantity }} </button>
+                    <button class="btn" [disabled]="singleCart.quantity == singleCart.book.availableBookQuantity" (click)="addOneQuantity(singleCart.book.bookId)">+</button>
+                    <button class="remove-button" (click)="removeBook(singleCart.book.bookId)">Remove</button>
+                </div>
+            </div>
+
+            <form #addressForm="ngForm">
+                <div class="address-form">
+                    <h3>Enter Delivery Address</h3>
+
+                    <label for="state">Select State:</label>
+                    <select id="state" class="location-tab" name="state" [(ngModel)]="selectedState" required #stateRef="ngModel">
+                        <option value="" disabled selected>Select your state</option>
+                        <option *ngFor="let state of statesList" [value]="state">{{ state }}</option>
+                    </select>
+                    <div *ngIf="stateRef.invalid && stateRef.touched" class="error">State is required</div>
+
+                    <label for="houseNo">House No:</label>
+                    <input type="text" id="houseNo" name="houseNo" [(ngModel)]="dummyValue" required #houseNoRef="ngModel" placeholder="Enter House Number">
+                    <div *ngIf="houseNoRef.invalid && houseNoRef.touched" class="error">House No is required</div>
+
+                    <label for="road">Road/Street:</label>
+                    <input type="text" id="road" name="road" [(ngModel)]="dummyValue" required #roadRef="ngModel" placeholder="Enter Road or Street">
+                    <div *ngIf="roadRef.invalid && roadRef.touched" class="error">Road/Street is required</div>
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" [(ngModel)]="dummyValue" required #cityRef="ngModel" placeholder="Enter City">
+                    <div *ngIf="cityRef.invalid && cityRef.touched" class="error">City is required</div>
+
+                    <label for="pincode">Pin Code:</label>
+                    <input type="text" id="pincode" name="pincode" [(ngModel)]="dummyValue" required #pincodeRef="ngModel" placeholder="Enter Pin Code">
+                    <div *ngIf="pincodeRef.invalid && pincodeRef.touched" class="error">Pin Code is required</div>
+                </div>
+
+                <div class="place-order-btn">
+                    <button class="place-order" (click)="placeOrder()" [disabled]="addressForm.invalid">PLACE ORDER</button>
+                </div>
+            </form>
 
         </div>
     </div>

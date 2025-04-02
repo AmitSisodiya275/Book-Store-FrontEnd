@@ -33,4 +33,9 @@ export class AddBookComponent implements OnInit {
         error=>(console.log(error))
       );
     }
+
+    onSortChange(event: any) {
+      const value = event.target.value;
+      this.model.bookCategory = value;
+    }
   }

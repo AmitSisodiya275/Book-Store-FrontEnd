@@ -1,5 +1,5 @@
 export class AddBookDetails {
-    availableBookQuantity!: number;
+    availableBookQuantity : any;
     bookAuthor: string;
     bookDescription: string;
     bookImages: File | any;
@@ -7,6 +7,6 @@ export class AddBookDetails {
     bookPrice: any;
     originalPrice : any;
     bookRating: any;
-    inCartQuantity!: number;
-    
+    bookCategory : string;
+    bookSampleChapter : string;
 }
