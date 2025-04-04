@@ -11,10 +11,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
 import { MyWishlistComponent } from './components/my-wishlist/my-wishlist.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
-import { MyOrderComponent } from './components/my-order/my-order.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
+import { DonateBookComponent } from './components/donate-book/donate-book.component';
+import { DonateSuccessComponent } from './components/donate-success/donate-success.component';
 const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'sign-up', component: SignUpComponent},
@@ -29,7 +30,9 @@ const routes: Routes = [
   { path: 'my-orders', component:MyOrdersComponent},
   { path: 'order-successfull/:orderId', component:OrderSuccessComponent},
   { path: 'add-book', component:AddBookComponent},
-  { path: 'update-book', component:UpdateBookComponent}
+  { path: 'update-book', component:UpdateBookComponent},
+  { path: 'donate-book', component:DonateBookComponent},
+  { path: 'donate-success', component:DonateSuccessComponent}
 ];
 
 @NgModule({

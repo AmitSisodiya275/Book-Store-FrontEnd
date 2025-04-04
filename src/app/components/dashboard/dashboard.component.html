@@ -25,6 +25,7 @@
             <option>Newest Arrivals</option>
         </select>
         <button class="add-book" *ngIf="(role =='Admin')" (click)="navigateToAddBook()"> Add Books</button>
+        <button class="add-book" *ngIf="(role =='User')" (click)="navigateToDonateBook()"> Donate Books</button>
     </div>
 
     <div class="main">

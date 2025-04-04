@@ -32,6 +32,8 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
 import { BookPreviewComponent, BookPreviewDialogComponent } from './components/book-preview/book-preview.component';
+import { DonateBookComponent } from './components/donate-book/donate-book.component';
+import { DonateSuccessComponent } from './components/donate-success/donate-success.component';
 
 
 
@@ -55,7 +57,9 @@ import { BookPreviewComponent, BookPreviewDialogComponent } from './components/b
     AddBookComponent,
     UpdateBookComponent,
     BookPreviewComponent,
-    BookPreviewDialogComponent
+    BookPreviewDialogComponent,
+    DonateBookComponent,
+    DonateSuccessComponent
   ],
   imports: [
     BrowserModule,

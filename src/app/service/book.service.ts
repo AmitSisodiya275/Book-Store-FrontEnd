@@ -18,8 +18,8 @@ export class BookService {
 
   constructor(private http:HttpClient) { }
 
-  getAllBooks(num:number) {
-    return this.http.get<AllBooks>(`${this.apiUrl}/get-books/${num}`);
+  getAllBooks(num:number, category: string) {
+    return this.http.get<AllBooks>(`${this.apiUrl}/get-books/${num}/${category}`);
   }
 
   getBookById(id: number):Observable<BookDetails>{

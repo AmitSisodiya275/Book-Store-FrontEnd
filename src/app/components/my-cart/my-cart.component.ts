@@ -33,7 +33,14 @@ export class MyCartComponent implements OnInit {
     "Uttar Pradesh", "Uttarakhand", "West Bengal"
   ];
   selectedState: string = "";
-  dummyValue: string = ""; 
+  houseNo: string = "";
+  road: string = "";
+  city: string = "";
+  pincode: string = ""; 
+  totalAmount : number;
+  cardNumber : string;
+  cvv : any;
+  expiry : any;
 
   constructor(private cartService: CartService, private orderService:OrderService, private router:Router) { }
  
@@ -51,7 +58,9 @@ export class MyCartComponent implements OnInit {
 
   getProductOfCart(){
     this.cartService.getProductOfCart(this.token).subscribe(
-      data=>{ console.log(data), this.cartItems= data.cartItems, this.cartValue= data.totalCartQuantity},
+      data=>{ console.log(data), this.cartItems= data.cartItems, this.cartValue= data.totalCartQuantity,
+        this.totalAmount = this.getTotalPrice();
+      },
       error=> { console.log(error)}
     );
   }
@@ -82,14 +91,30 @@ export class MyCartComponent implements OnInit {
   }
 
   placeOrder(){
-    this.orderService.placeOrder(this.token, 4500).subscribe(
+    this.orderService.placeOrder(this.token, this.totalAmount).subscribe(
       data=>{console.log(data), 
         this.order = data,
-        console.log(this.order.id) , this.id = this.order.id, this.routeToSuccess(this.id)},
+        console.log(this.order.orderId) , this.id = this.order.orderId, this.routeToSuccess(this.id)},
       error=>{ console.log(error)}
     )  }
 
     routeToSuccess(id:number){
       this.router.navigate([`/order-successfull/${id}`])
     }
+    getTotalPrice(): number {
+      return this.cartItems.reduce((total, item) => total + (item.book.bookPrice * item.quantity), 0);
+  }
+
+  validateNumberInput(event: KeyboardEvent) {
+    const charCode = event.which ? event.which : event.keyCode;
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault();
+    }
+  }
+
+  onCardNumberInput() {
+    // Remove any non-digit characters (just in case)
+    this.cardNumber = this.cardNumber.replace(/\D/g, '');
+  }
+  
 }

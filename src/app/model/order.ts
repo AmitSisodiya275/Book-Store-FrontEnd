@@ -3,7 +3,7 @@ import { Cart } from "./cart";
 import { User } from "./user";
 
 export class Order{
-    id!:number;
+    orderId!:number;
     user: User | undefined;
     // cart: Cart | undefined;
     placedAt:Date | undefined;

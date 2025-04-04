@@ -20,29 +20,31 @@ export class DashboardComponent implements OnInit {
   pagesArray: number[] = [];
   role:any;
   isPaginationCalculated: boolean = false;
+  mood : string;
 
   constructor(private bookService: BookService,private router: Router) { }
 
   ngOnInit(): void {
-    this.getBookDetail(this.currentPage);
+    this.mood = 'All';
+    this.getBookDetail(this.currentPage, this.mood);
     this.searchBook();
     // this.calculatePages();
     this.role = localStorage.getItem("role");
   }
 
   calculatePages() {
-    if (!this.isPaginationCalculated) { // Prevents unnecessary recalculations
+    // if (!this.isPaginationCalculated) { // Prevents unnecessary recalculations
       this.totalPages = Math.ceil(this.totalBooks / this.booksPerPage);
       this.pagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
       console.log("Total Pages Calculated:", this.pagesArray);
-      this.isPaginationCalculated = true; // Mark pagination as calculated
-    }
+      // this.isPaginationCalculated = true; // Mark pagination as calculated
+    // }
   }
 
   goToPage(page: number) {
     this.currentPage = page;
     console.log('Current Page:', this.currentPage);
-    this.getBookDetail(page);
+    this.getBookDetail(page, this.mood);
   }
 
   prevPage() {
@@ -56,18 +58,22 @@ export class DashboardComponent implements OnInit {
       this.goToPage(this.currentPage + 1);
     }
   }
-  getBookDetail(num:number) {
+  getBookDetail(num:number,mood: string) {
    
-    this.bookService.getAllBooks(num).subscribe( bookdata => {
+    this.bookService.getAllBooks(num, mood).subscribe( bookdata => {
       console.log(bookdata);
       this.bookList=bookdata.books;
       this.unFilteredBooks = [...this.bookList];
       console.log(this.bookList);
       this.totalBooks= bookdata.totalBooks;
-      if (!this.isPaginationCalculated) { // Only calculate totalBooks once
+      // if (!this.isPaginationCalculated) { // Only calculate totalBooks once
         this.totalBooks = bookdata.totalBooks;
         this.calculatePages();
-      }
+      // }
+    }, error => {
+      this.bookList = [];
+      this.totalBooks = 0;
+      this.calculatePages();
     });
   }
   onClickBook(id:number) {
@@ -91,6 +97,9 @@ export class DashboardComponent implements OnInit {
   navigateToAddBook(){
     this.router.navigate([`add-book`]);
   }
+  navigateToDonateBook(){
+    this.router.navigate([`donate-book`]);
+  }
   onSortChange(event: any) {
     const sortOption = event.target.value;
 
@@ -106,12 +115,14 @@ export class DashboardComponent implements OnInit {
   }
 
   groupByCategory(event : any) {
-    const mood = event.target.value;
-    if(mood === 'All'){
-      this.bookList = this.unFilteredBooks;
-    } else {
-      this.bookList = this.unFilteredBooks.filter( singleBook => singleBook.bookCategory === mood);
-    }
+     this.mood = event.target.value;
+     this.currentPage = 1;
+     this.goToPage(this.currentPage);
+    // if(mood === 'All'){
+    //   this.bookList = this.unFilteredBooks;
+    // } else {
+    //   this.bookList = this.unFilteredBooks.filter( singleBook => singleBook.bookCategory === mood);
+    // }
   }
 
   // Sort books by price: Low to High

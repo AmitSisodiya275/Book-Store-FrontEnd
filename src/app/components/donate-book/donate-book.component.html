@@ -1,0 +1,50 @@
+
+<app-header></app-header>
+<div class="container">
+   
+    <h1>Donate Book</h1>
+    <form #addBookForm="ngForm">
+
+        <label for="bookCategory">Book Category</label>
+        <select class="selectBox">
+            <option>Science-Fiction</option>
+            <option>Mystry & Thriller</option>
+            <option>Horror</option>
+            <option>Romance</option>
+            <option>Adventure</option>
+            <option >Fantasy</option>
+        </select>
+        
+        <label for="bookName">Book Name:</label>
+        <input type="text" id="bookName" [(ngModel)]="bookname" name="bookName" #bookName="ngModel" required> <span *ngIf="!bookName.valid && bookName.touched" class="label-text error">Book Name is Required!!</span>
+
+        <label for="bookAuthor">Author:</label>
+        <input type="text" id="bookAuthor" [(ngModel)]="bookauthor" name="bookAuthor" required>
+
+        <label for="state">Select State:</label>
+        <select id="state" class="location-tab" name="state" [(ngModel)]="selectedState" required #stateRef="ngModel">
+            <option value="" disabled selected>Select your state</option>
+            <option *ngFor="let state of statesList" [value]="state">{{ state }}</option>
+        </select>
+        <div *ngIf="stateRef.invalid && stateRef.touched" class="error">State is required</div>
+
+        <label for="houseNo">House No:</label>
+        <input type="text" id="houseNo" name="houseNo" [(ngModel)]="houseNo" required #houseNoRef="ngModel" placeholder="Enter House Number">
+        <div *ngIf="houseNoRef.invalid && houseNoRef.touched" class="error">House No is required</div>
+
+        <label for="road">Road/Street:</label>
+        <input type="text" id="road" name="road" [(ngModel)]="road" required #roadRef="ngModel" placeholder="Enter Road or Street">
+        <div *ngIf="roadRef.invalid && roadRef.touched" class="error">Road/Street is required</div>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" [(ngModel)]="city" required #cityRef="ngModel" placeholder="Enter City">
+        <div *ngIf="cityRef.invalid && cityRef.touched" class="error">City is required</div>
+
+        <label for="pincode">Pin Code:</label>
+        <input type="number" id="pincode" name="pincode" [(ngModel)]="pincode" required #pincodeRef="ngModel" placeholder="Enter Pin Code">
+        <div *ngIf="pincodeRef.invalid && pincodeRef.touched" class="error">Pin Code is required</div>
+
+        <button type="submit" [disabled]="!addBookForm.valid"
+        class="submitButton sign-button-text" routerLink="/donate-success" >Donate Book</button>
+    </form>
+</div>
